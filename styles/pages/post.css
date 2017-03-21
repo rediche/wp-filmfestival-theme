@@ -1,0 +1,20 @@
+.post {}
+
+.post-image {
+    background-image: url(../../images/news/news_01.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+    margin: 0 -8px;
+}
+
+.post-lead {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 48rem) {
+    .post-image {
+        margin: 0 -16px;
+    }
+}

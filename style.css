@@ -1,0 +1,66 @@
+/*
+Theme Name: CPHPIX
+Theme URI: https://cphpix.dev
+Author: Marcus Asbæk Geil
+Author URI: https://marcusis.me
+Version: 0.1
+*/
+
+/* Reset CSS */
+@import url(./bower_components/normalize-css/normalize.css);
+
+/* Import flexboxgrid */
+@import url(./bower_components/flexboxgrid/dist/flexboxgrid.min.css);
+
+/* Import font awesome */
+@import url(./bower_components/font-awesome/css/font-awesome.css);
+
+/* Settings */
+@import url(./styles/settings.css);
+
+/* Scaffold */
+@import url(./styles/scaffold.css);
+
+/* Typografi */
+@import url(./styles/typography.css);
+
+/* HTML Elements */
+@import url(./styles/elements.css);
+
+/* Utility classes */
+@import url(./styles/utility.css);
+
+/* Partials */
+@import url(./styles/partials/navigation.css);
+@import url(./styles/partials/movie-card.css);
+@import url(./styles/partials/movie-schedule.css);
+@import url(./styles/partials/movie-mood.css);
+@import url(./styles/partials/content-card.css);
+@import url(./styles/partials/slider-card.css);
+@import url(./styles/partials/trailer-overlay.css);
+@import url(./styles/partials/post-card.css);
+@import url(./styles/partials/page-footer.css);
+@import url(./styles/partials/partners.css);
+@import url(./styles/partials/newsletter-signup.css);
+@import url(./styles/partials/ticket-card.css);
+@import url(./styles/partials/buster-section.css);
+
+/* Sider */
+@import url(./styles/pages/frontpage.css);
+@import url(./styles/pages/movie.css);
+@import url(./styles/pages/program.css);
+@import url(./styles/pages/post.css);
+@import url(./styles/pages/mypix.css);
+
+body {
+	background-image: url(./images/backgrounds/18405a_dark.jpg);
+	background-image: url(./images/backgrounds/26996a_dark.jpg);
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+a:focus {
+	outline: none;
+}

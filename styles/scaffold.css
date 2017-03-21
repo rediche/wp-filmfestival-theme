@@ -1,0 +1,42 @@
+/**
+ * GOD DAMN FLEXBOXGRID FIXES!
+ */
+
+@media screen and (max-width: 48rem) {
+    .container > .row {
+        margin: 0;
+    }
+
+    .container > .row > .col-xs {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 48rem) {
+    body {
+        min-height: calc(100vh - 100px);
+        padding-top: 100px;
+    }
+
+    .container {
+        width: 46rem;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    .container {
+        width: 62rem;
+    }
+}
+
+@media only screen and (min-width: 75rem) {
+    .container {
+        width: 73rem;
+    }
+}

@@ -1,0 +1,32 @@
+.post-card {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.post-card a {
+    text-decoration: none;
+    color: var(--color-grey);
+}
+
+.post-card-image {
+    background-image: url(../../images/news/news_large_01.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+    position: relative;
+}
+
+.post-card-title {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow);
+}
+
+.post-card-body {
+    font-size: .8rem;
+}
+

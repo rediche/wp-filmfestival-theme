@@ -1,0 +1,35 @@
+.movie-sidebar {
+    padding: 0;
+}
+
+.movie-description-title,
+.movie-description-byline {
+    margin: 0;
+}
+
+.movie-description-title {
+    font-size: 3rem;
+}
+
+.movie-description-footer {
+    font-size: .8rem;
+}
+
+.movie-sidebar-title {
+    margin-top: 2rem;
+    padding: 0 .5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+@media screen and (min-width: 48em) {
+    .movie-sidebar {
+        padding: 0 .5em;
+    }
+
+    .movie-sidebar-title {
+        padding: 0;
+    }
+}

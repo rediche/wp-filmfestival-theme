@@ -1,0 +1,34 @@
+.buster-section {
+    padding: 2rem 1rem;
+}
+
+.buster-section-image-container {
+    text-align: center;
+}
+
+.buster-section-image {
+    width: 157px;
+    height: auto;
+}
+
+.buster-section-heading {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.buster-section-subheading {
+    margin-top: 0;
+}
+
+.buster-section-button {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-light-grey);
+    color: var(--color-grey);
+}
+
+@media screen and (min-width: 48rem) {
+    .buster-section-image-container {
+        text-align: right;
+    }
+}

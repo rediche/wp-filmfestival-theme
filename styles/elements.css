@@ -1,0 +1,82 @@
+/**
+ * Index
+ * 
+ * 1. Buttons
+ * 2. Images
+ * 3. Paper-toast
+ * 4. #overlay
+ * 5. Address
+ */
+
+/* 1. Buttons */
+
+.button {
+    background-color: var(--color-red);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    cursor: pointer;
+}
+
+.button.inline {
+    display: inline-flex;
+}
+
+.button.tiny {
+    min-height: 32px;
+    padding: 0 .5rem;
+}
+
+.button.black {
+    background-color: var(--color-black);
+}
+
+.button.transparent {
+    background-color: transparent;
+    color: var(--color-grey);
+}
+
+/* 2. Images */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Paper-toast */
+
+paper-toast.error {
+    background-color: var(--color-red);
+}
+
+/* 4. Backdrop Overlay */
+
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3 opacity;
+    background-color: rgba(0,0,0,.8);
+}
+
+#overlay.show {
+    opacity: 1;
+}
+
+/* 5. Address */
+address {
+    font-style: normal;
+}

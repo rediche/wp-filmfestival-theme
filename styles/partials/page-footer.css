@@ -1,0 +1,49 @@
+.page-footer {}
+
+.page-footer-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.page-footer-menu a {
+    color: var(--color-white);
+    font-weight: 100;
+    text-decoration: none;
+    padding: .5rem 0;
+    display: inline-block;
+    font-size: .8rem;
+}
+
+.page-footer-socialmedia {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.page-footer-socialmedia .fa {
+    transition: .3s all;
+}
+
+.page-footer-socialmedia a {
+    color: var(--color-white);
+}
+
+.page-footer-socialmedia a:hover .fa {
+    color: var(--color-red);
+}
+
+.page-footer-newsletter {
+    margin-bottom: 1rem;
+}
+
+.page-footer-newsletter-text {
+    margin-top: 0;
+    font-weight: 100;
+}
+
+@media screen and (min-width: 48rem) {
+    .page-footer-newsletter,
+    .page-footer-menu {
+        margin: 0;
+    }
+}

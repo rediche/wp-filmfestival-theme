@@ -1,0 +1,13 @@
+/* Extra small only */
+@media screen and (max-width: 30em) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+
+/* Small and up */
+@media screen and (min-width: 30em) {
+    .hidden-sm-up {
+        display: none !important;
+    }
+}

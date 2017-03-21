@@ -1,0 +1,29 @@
+.frontpage-header {
+    color: var(--color-white);
+    margin: 50px 0;
+    text-shadow: var(--text-shadow);
+}
+
+.frontpage-header-title, 
+.frontpage-header-subtitle {
+    line-height: 1;
+    margin: 0;
+}
+
+.frontpage-header-title {
+    font-size: 3rem;
+}
+
+.frontpage-header-subtitle {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 48rem) {
+    .frontpage-header {
+        margin: 0 0 100px;
+    }
+    .frontpage-header-title {
+        font-size: 5rem;
+    }
+}

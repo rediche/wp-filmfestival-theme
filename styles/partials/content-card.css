@@ -1,0 +1,53 @@
+.content-card {
+    background-color: var(--color-white);
+    box-shadow: var(--content-card-shadow);
+    padding: 0 var(--padding-xs);
+}
+
+.content-card.inverted {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.content-card-title {
+    font-size: 2rem;
+    margin-top: 0;
+}
+
+.content-card-extras-title {
+    font-size: 1.17rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.content-card-extras-title.no-margin {
+    margin-top: 0;
+}
+
+/* Content Card Trailer */
+.content-card.trailer {
+    padding: 0;
+}
+
+.content-card .trailer-cover {
+    background-image: url(../../images/videooverlay/videooverlay.png);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: .3s opacity;
+}
+
+@media screen and (min-width: 48em) {
+    .content-card {
+        padding: var(--padding);
+        margin-bottom: var(--margin);
+    }
+
+    .content-card-title {
+        margin-top: 8px;
+    }
+}

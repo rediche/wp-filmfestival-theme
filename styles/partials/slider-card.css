@@ -1,0 +1,30 @@
+.slider-card {
+    padding: 1rem 1rem 0rem;
+}
+
+.slider-card-title {
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 0 0 .5em;
+}
+
+.slider-items {
+    margin-top: 1rem;
+}
+
+.slider-more .button {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-light-grey);
+    color: var(--color-grey);
+}
+
+.slider-items:first-child {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 48rem) {
+    .slider-more .button {
+        margin-top: 2rem;
+    }
+}

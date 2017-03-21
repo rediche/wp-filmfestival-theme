@@ -1,0 +1,25 @@
+.movie-mood {
+    padding: 0 .5rem;
+}
+
+.movie-mood-label {
+    font-weight: 100;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.movie-mood-bar {
+    height: .5rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-light-grey);
+}
+.movie-mood-progress {
+    width: 75%;
+    height: 100%;
+    background-color: var(--color-grey);
+}
+
+@media screen and (min-width: 48rem) {
+    .movie-mood {
+        padding: 0;
+    }
+}

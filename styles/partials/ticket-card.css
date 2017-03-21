@@ -1,0 +1,44 @@
+.ticket-card {
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100px);
+    transition: .3s all;
+    max-width: calc(100% - 2rem);
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    top: calc(50% - 172px);
+    position: fixed;
+    z-index: 101;
+    background-color: var(--color-white);
+    box-shadow: var(--content-card-shadow);
+}
+
+.ticket-card.open {
+    opacity: 1;
+    pointer-events: initial;
+    transform: translateY(0);
+}
+
+.ticket-card-image {
+    background-image: url('../../images/movies/thumbs/18405a_thumb.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.ticket-card-title {
+    margin: 0;
+    color: var(--color-white);
+    text-shadow: var(--text-shadow);
+}
+
+.ticket-card-content {
+    padding: 1rem;
+}

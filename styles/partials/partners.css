@@ -1,0 +1,23 @@
+.partners {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.partner-header {
+    font-size: .6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-grey);
+    padding-bottom: .2rem;
+    margin-bottom: .5rem;
+}
+
+.partner-image {
+    width: 112px;
+}
+
+@media screen and (min-width: 48rem) {
+    .partners {
+        padding-bottom: 0rem;
+    }
+}

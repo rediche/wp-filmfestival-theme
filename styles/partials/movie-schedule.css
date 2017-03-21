@@ -1,0 +1,39 @@
+.movie-schedule {
+    padding: 1rem 0;
+    background-color: var(--color-light-grey);
+}
+
+.movie-schedule-entry {
+    padding: .5rem 1rem;
+    transition: .3s background-color;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
+.movie-schedule-entry:hover {
+    background-color: #ddd;
+}
+
+.movie-schedule-venue {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .7rem;
+    margin: 0;
+}
+
+.movie-schedule-buy {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+.movie-schedule-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-schedule-time {}
+
+.movie-schedule-buy {}
