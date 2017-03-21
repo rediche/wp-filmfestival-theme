@@ -4,11 +4,13 @@
     var burgerElementIcon = document.querySelector('.burger .fa');
     var navigationMenu = document.querySelector('.main-navigation-items');
 
-    burgerElement.addEventListener('click', function(event) {
-        navigationMenu.classList.toggle('open');
-        burgerElementIcon.classList.toggle('fa-bars');
-        burgerElementIcon.classList.toggle('fa-times');
-    });
+    if (burgerElement) {
+        burgerElement.addEventListener('click', function(event) {
+            navigationMenu.classList.toggle('open');
+            burgerElementIcon.classList.toggle('fa-bars');
+            burgerElementIcon.classList.toggle('fa-times');
+        });
+    }
 
     /* Toggle submenus */
     var subMenuElements = document.querySelectorAll('.sub-menu');
