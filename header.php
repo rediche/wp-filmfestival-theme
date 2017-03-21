@@ -28,7 +28,9 @@
 <body>
 
   <?php 
-  if(basename($_SERVER[REQUEST_URI]) != 'index.php') {
+  /*if(basename($_SERVER[REQUEST_URI]) != 'index.php') {
     include('navigation.php');
-  }
+  }*/
+
+  include('navigation.php');
   ?>
