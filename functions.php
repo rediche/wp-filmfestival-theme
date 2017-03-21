@@ -8,7 +8,7 @@ add_action( 'wp_enqueue_scripts', 'add_theme_styles' );
 function add_theme_scripts() {
     /* Bower Components */
     wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/bower_components/mixitup/dist/mixitup.min.js');
-    
+
     /* Themes own JS */
     wp_enqueue_script( 'program', get_template_directory_uri() . '/scripts/program.js' );
     wp_enqueue_script( 'navigation', get_template_directory_uri() . '/scripts/navigation.js' );
@@ -18,3 +18,8 @@ function add_theme_scripts() {
     wp_enqueue_script( 'movie', get_template_directory_uri() . '/scripts/movie.js' );
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+function register_main_menu() {
+  register_nav_menu( 'primary', __( 'Primary Menu', 'cphpix' ) );
+}
+add_action( 'after_setup_theme', 'register_main_menu' );

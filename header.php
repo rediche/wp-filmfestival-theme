@@ -30,6 +30,9 @@
   /*if(basename($_SERVER[REQUEST_URI]) != 'index.php') {
     include('navigation.php');
   }*/
-
-  include('navigation.php');
+  ?>
+  <?php
+  if (!is_front_page()) {
+    get_sidebar('navigation'); 
+  } 
   ?>

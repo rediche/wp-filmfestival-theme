@@ -42,30 +42,30 @@
                 <div class="row partners">
                     <div class="col-xs-4 col-md-2">
                         <h4 class="partner-header">Hovedsponsor</h4>
-                        <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/blockbuster.png" alt="..."></a>
+                        <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/blockbuster.png" alt="..."></a>
                     </div>
                     <div class="col-xs-4 col-md-2">
                         <h4 class="partner-header">Logistiksponsor</h4>
-                        <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/ups.png" alt="..."></a>
+                        <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/ups.png" alt="..."></a>
                     </div>
                     <div class="col-xs-4 col-md-2">
                         <h4 class="partner-header">Mediepartner</h4>
-                        <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/politiken.png" alt="Politiken"></a>
+                        <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/politiken.png" alt="Politiken"></a>
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <h4 class="partner-header">Offentlige partnere</h4>
                         <div class="row">
                             <div class="col-xs">
-                                <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/filminstitut.png" alt="Dansk Filminstitut"></a>
+                                <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/filminstitut.png" alt="Dansk Filminstitut"></a>
                             </div>
                             <div class="col-xs">
-                                <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/koebenhavn.png" alt="Københavns Kommune"></a>
+                                <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/koebenhavn.png" alt="Københavns Kommune"></a>
                             </div>
                             <div class="col-xs">
-                                <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/europemedia.png" alt="Europe Media"></a>
+                                <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/europemedia.png" alt="Europe Media"></a>
                             </div>
                             <div class="col-xs">
-                                <a href="#0"><img class="partner-image" src="<?php echo get_theme_directory_uri(); ?>/images/partners/images16.png" alt="Images 16"></a>
+                                <a href="#0"><img class="partner-image" src="<?php echo get_template_directory_uri(); ?>/images/partners/images16.png" alt="Images 16"></a>
                             </div>
                         </div>
                     </div>

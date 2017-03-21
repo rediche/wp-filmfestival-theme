@@ -5,14 +5,14 @@
         <div class="row center-xs">
             <div class="col-xs-12">
                 <div class="frontpage-header">
-                    <h1 class="frontpage-header-title">Filmfestival</h1>
-                    <p class="frontpage-header-subtitle">08.09.17 - 11.10.17</p>
+                    <h1 class="frontpage-header-title"><?php bloginfo(); ?></h1>
+                    <p class="frontpage-header-subtitle"><?php bloginfo('description'); ?></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <?php include('navigation.php'); ?>
+    <?php get_sidebar('navigation');  ?>
 
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>24 Weeks</h2>
                                             <p>Instr.: Anne Zohra Berrached</p>
@@ -51,7 +51,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>Det hvide folk</h2>
                                             <p>Instr.: Lisa Aschan</p>
@@ -78,7 +78,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>The Demons</h2>
                                             <p>Instr.: Philippe Lesage</p>
@@ -132,7 +132,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>24 Weeks</h2>
                                             <p>Instr.: Anne Zohra Berrached</p>
@@ -159,7 +159,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>Det hvide folk</h2>
                                             <p>Instr.: Lisa Aschan</p>
@@ -186,7 +186,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>The Demons</h2>
                                             <p>Instr.: Philippe Lesage</p>
@@ -213,7 +213,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>24 Weeks</h2>
                                             <p>Instr.: Anne Zohra Berrached</p>
@@ -240,7 +240,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>Det hvide folk</h2>
                                             <p>Instr.: Lisa Aschan</p>
@@ -267,7 +267,7 @@
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
-                                        <img src="<?php echo get_theme_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
                                         <div class="movie-card-headline">
                                             <h2>The Demons</h2>
                                             <p>Instr.: Philippe Lesage</p>
@@ -302,7 +302,7 @@
                 <div class="content-card buster-section">
                     <div class="row middle-xs">
                         <div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1 buster-section-image-container">
-                            <img class="buster-section-image" src="<?php echo get_theme_directory_uri(); ?>/images/buster_v3.png" alt="...">
+                            <img class="buster-section-image" src="<?php echo get_template_directory_uri(); ?>/images/buster_v3.png" alt="...">
                         </div>
                         <div class="col-xs-12 col-sm-9 col-md-5 col-md-offset-1">
                             <h3 class="buster-section-heading">Er du lærer?</h3>
