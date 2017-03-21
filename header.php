@@ -20,7 +20,6 @@
   <link rel="import" href="./bower_components/paper-listbox/paper-listbox.html">
   <link rel="import" href="./bower_components/paper-item/paper-item.html">
   <link rel="import" href="./bower_components/paper-dropdown-menu/paper-dropdown-menu.html">-->
-  <!--<link rel="stylesheet" href="styles/main.css">-->
 
   <?php wp_head(); ?>
 </head>
