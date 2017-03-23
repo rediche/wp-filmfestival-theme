@@ -1,9 +1,9 @@
-(function() {
+document.addEventListener('DOMContentLoaded', event => {
     /* Toggle burger menu */
-    var burgerElement  = document.querySelector('.burger');
+    var burgerElement = document.querySelector('.burger');
     var burgerElementIcon = document.querySelector('.burger .fa');
     var navigationMenu = document.querySelector('.main-navigation-items');
-
+    
     if (burgerElement) {
         burgerElement.addEventListener('click', function(event) {
             navigationMenu.classList.toggle('open');
@@ -30,4 +30,4 @@
             });
         }
     }); 
-})();
+});

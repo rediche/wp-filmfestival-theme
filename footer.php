@@ -153,5 +153,7 @@
             <paper-ripple></paper-ripple>
         </a>
     </template>
+
+    <?php wp_footer(); ?>
 </body>
 </html>

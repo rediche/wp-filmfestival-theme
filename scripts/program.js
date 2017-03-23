@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('DOMContentLoaded', event => {
     /* Toggle filtre */
     var filterElement  = document.querySelector('.program-search-filter');
     var filterContainer = document.querySelector('.program-filter');
@@ -150,4 +150,4 @@
     }
 
 
-})();
+});

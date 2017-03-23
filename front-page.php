@@ -20,7 +20,14 @@
                 <div class="content-card slider-card">
                     <h2 class="content-card-extras-title no-margin">Udvalgte film</h2>
                     <div class="slider-items row">
-                        <div class="col-xs-12 col-sm-6 col-md-4">
+                        <?php
+                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
+                            $selectedMoviesLoop = new WP_Query( $args );
+                            while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
+                                get_template_part( 'partials/loop', 'movie' );
+                            endwhile;
+                        ?>
+                        <!--<div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="movie-card-container">
                                 <a href="filmside.php">
                                     <div class="movie-card animated">
@@ -99,7 +106,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 
@@ -128,167 +135,13 @@
                 <div class="content-card slider-card">
                     <h2 class="content-card-extras-title no-margin">Kommende film</h2>
                     <div class="slider-items row">
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>24 Weeks</h2>
-                                            <p>Instr.: Anne Zohra Berrached</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>Livet er godt hos standupperen Astrid. Hun har succes og gang i karrieren, et lækkert hus i forstaden, en sød kæreste-skråstreg-manager...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>Det hvide folk</h2>
-                                            <p>Instr.: Lisa Aschan</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>Alex bliver samlet op foran en grønthandler og ført til et underjordisk fængsel for ubudne gæster, der skal deporteres fra Sverige...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>The Demons</h2>
-                                            <p>Instr.: Philippe Lesage</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>De voksne kan være dæmoner i børnenes verden. Til tider i skræmmende bogstavelig forstand. Philippe Lesage...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>24 Weeks</h2>
-                                            <p>Instr.: Anne Zohra Berrached</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>Livet er godt hos standupperen Astrid. Hun har succes og gang i karrieren, et lækkert hus i forstaden, en sød kæreste-skråstreg-manager...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/17634a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>Det hvide folk</h2>
-                                            <p>Instr.: Lisa Aschan</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>Alex bliver samlet op foran en grønthandler og ført til et underjordisk fængsel for ubudne gæster, der skal deporteres fra Sverige...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-sm-6 col-md-4">
-                            <div class="movie-card-container">
-                                <a href="filmside.php">
-                                    <div class="movie-card animated">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18453a_thumb.jpg" alt="...">
-                                        <div class="movie-card-headline">
-                                            <h2>The Demons</h2>
-                                            <p>Instr.: Philippe Lesage</p>
-                                        </div>
-                                        <div class="movie-card-content">
-                                            <p>De voksne kan være dæmoner i børnenes verden. Til tider i skræmmende bogstavelig forstand. Philippe Lesage...</p>
-                                        </div>
-                                        <div class="movie-card-overlay"></div>
-                                    </div>
-                                    <paper-ripple></paper-ripple>
-                                </a>
-                                <div class="movie-card-buttons">
-                                    <a href="#0" class="button">Køb Billet
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                    <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
-                                        <paper-ripple></paper-ripple>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
+                            $selectedMoviesLoop = new WP_Query( $args );
+                            while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
+                                get_template_part( 'partials/loop', 'movie' );
+                            endwhile;
+                        ?>
                     </div>
                     <div class="slider-more row">
                         <div class="col-xs col-sm-6 col-sm-offset-3">

@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('DOMContentLoaded', event => {
     /* Toggle MyPIX toast */
     var addToMyPIXButton = document.querySelectorAll('.add-to-mypix');
     var mypixToast = document.getElementById('mypixToast');
@@ -191,4 +191,4 @@
             }
         });
     });
-})();
+});

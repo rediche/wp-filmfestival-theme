@@ -1,4 +1,4 @@
-(function() {
+document.addEventListener('DOMContentLoaded', event => {
     var movieProgressBars = document.querySelectorAll('.movie-mood-bar');
 
     movieProgressBars.forEach(function(element) {
@@ -10,4 +10,4 @@
             progressMade.style.width = 0 + '%';
         }
     });
-})();
+});
