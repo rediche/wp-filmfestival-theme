@@ -2,7 +2,8 @@
     <div class="movie-card-container">
         <a href="<?php get_permalink(); ?>">
             <div class="movie-card animated">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">
+                <?php the_post_thumbnail(); ?>
+                <!--<img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">-->
                 <div class="movie-card-headline">
                     <h2><?php the_title(); ?></h2>
                     <p>Instr.: Anne Zohra Berrached</p>
