@@ -136,7 +136,7 @@
                     <h2 class="content-card-extras-title no-margin">Kommende film</h2>
                     <div class="slider-items row">
                         <?php
-                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 9 );
+                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 6 );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
