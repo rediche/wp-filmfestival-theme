@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="movie-card-container">
-        <a href="<?php get_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>">
             <div class="movie-card animated">
                 <?php the_post_thumbnail(); ?>
                 <!--<img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">-->
