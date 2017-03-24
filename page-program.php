@@ -16,7 +16,7 @@
                             <div class="col-xs-12 col-sm-9">
                                 <div class="program-search">
                                     <span class="program-search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-                                    <input type="text" name="query" class="program-search-field" placeholder="Søg og tryk enter! (Virker ikke lige nu, brug filtre i stedet ->)" value="<?php echo $_GET['query']; ?>">
+                                    <input type="text" name="query" class="program-search-field" placeholder="Søg og tryk enter! (Virker ikke lige nu, brug filtre i stedet ->)" value="<?php if (isset($_GET['query'])) { echo $_GET['query']; } ?>">
                                     <span class="program-search-filter">
                                         Filter <i class="fa fa-caret-down" aria-hidden="true"></i>
                                     </span>
