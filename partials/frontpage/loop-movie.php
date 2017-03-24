@@ -3,7 +3,6 @@
         <a href="<?php the_permalink(); ?>">
             <div class="movie-card animated">
                 <?php the_post_thumbnail(); ?>
-                <!--<img src="<?php echo get_template_directory_uri(); ?>/images/movies/thumbs/18405a_thumb.jpg" alt="...">-->
                 <div class="movie-card-headline">
                     <h2><?php the_title(); ?></h2>
                     <p>Instr.: Anne Zohra Berrached</p>

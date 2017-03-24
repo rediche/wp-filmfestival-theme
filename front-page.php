@@ -24,7 +24,7 @@
                             $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
-                                get_template_part( 'partials/loop', 'movie' );
+                                get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
                         <!--<div class="col-xs-12 col-sm-6 col-md-4">
@@ -139,7 +139,7 @@
                             $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
-                                get_template_part( 'partials/loop', 'movie' );
+                                get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
                     </div>

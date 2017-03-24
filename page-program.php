@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php 
+/* Template Name: Program */
+?>
+<?php get_header(); ?>
 
     <div class="container">
         <main class="row">
@@ -274,4 +277,4 @@
         </main> 
     </div>
 
-<?php include('footer.php'); ?>
+<?php get_footer(); ?>
