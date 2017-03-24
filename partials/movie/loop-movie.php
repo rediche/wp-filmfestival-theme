@@ -49,42 +49,55 @@
         <?php } ?>
     </div>
 
+    <?php
+    /**
+     * Get Mood Metadata
+     */ 
+
+    $tempo          = get_post_meta( get_the_ID(), '_mood_tempo', true );
+    $thrills        = get_post_meta( get_the_ID(), '_mood_thrills', true );
+    $sighs          = get_post_meta( get_the_ID(), '_mood_sighs', true );
+    $laughs         = get_post_meta( get_the_ID(), '_mood_laughs', true );
+    $look           = get_post_meta( get_the_ID(), '_mood_look', true );
+    $foodforthought = get_post_meta( get_the_ID(), '_mood_foodforthought', true );
+    ?>
+
     <h2 class="movie-sidebar-title">Stemning</h2>
     <div class="movie-mood">
         <div class="row">
             <div class="col-xs-6">
-                <span class="movie-mood-label">Tempo</span>
-                <div class="movie-mood-bar" data-progress="45">
+                <span class="movie-mood-label"><?php _e( 'Tempo', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($tempo) ? $tempo : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
             <div class="col-xs-6">
-                <span class="movie-mood-label">Thrills</span>
-                <div class="movie-mood-bar" data-progress="40">
+                <span class="movie-mood-label"><?php _e( 'Thrills', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($thrills) ? $thrills : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
             <div class="col-xs-6">
-                <span class="movie-mood-label">Sighs</span>
-                <div class="movie-mood-bar" data-progress="100">
+                <span class="movie-mood-label"><?php _e( 'Sighs', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($sighs) ? $sighs : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
             <div class="col-xs-6">
-                <span class="movie-mood-label">Laughs</span>
-                <div class="movie-mood-bar" data-progress="80">
+                <span class="movie-mood-label"><?php _e( 'Laughs', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($laughs) ? $laughs : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
             <div class="col-xs-6">
-                <span class="movie-mood-label">Look</span>
-                <div class="movie-mood-bar" data-progress="70">
+                <span class="movie-mood-label"><?php _e( 'Look', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($look) ? $look : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
             <div class="col-xs-6">
-                <span class="movie-mood-label">Food for thought</span>
-                <div class="movie-mood-bar" data-progress="80">
+                <span class="movie-mood-label"><?php _e( 'Food for thought', 'cphpix' ); ?></span>
+                <div class="movie-mood-bar" data-progress="<?php echo (isset($foodforthought) ? $foodforthought : '0'); ?>">
                     <div class="movie-mood-progress"></div>
                 </div>
             </div>
