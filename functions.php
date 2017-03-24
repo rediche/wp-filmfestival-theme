@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts', 'add_theme_styles' );
 
 function add_theme_scripts() {
     /* jQuery */
-    wp_enqueue_script( 'jquery' );
+    //wp_enqueue_script( 'jquery' );
 
     /* Bower Components */
     wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/bower_components/mixitup/dist/mixitup.min.js');
