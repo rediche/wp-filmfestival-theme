@@ -145,6 +145,7 @@
                     </div>
                     <div class="slider-more row">
                         <div class="col-xs col-sm-6 col-sm-offset-3">
+                            <?php // TODO: Make link dynamic. Maybe taking first page with template Program? ?>
                             <a href="program.php" class="button">Se hele programmet
                                 <paper-ripple></paper-ripple>
                             </a>

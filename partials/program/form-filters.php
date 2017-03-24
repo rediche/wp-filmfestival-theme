@@ -125,10 +125,10 @@
             <div class="row center-xs end-sm program-filter-buttons">
                 <div class="col-xs-12 col-sm-6">
                     <p class="program-filter-whichprogram">
-                        <?php if($_REQUEST['festival'] == 'buster') { ?>
-                            <span>Du ser lige nu <strong>BUSTERs</strong> program. <a href="program.php">Skift til <strong>CPH PIX</strong></a>.</span></p>
+                        <?php if (isset($_GET['festival']) && $_GET['festival'] == 'buster') { ?>
+                            <span>Du ser lige nu <strong>BUSTERs</strong> program. <a href="<?php the_permalink(); ?>">Skift til <strong>CPH PIX</strong></a>.</span></p>
                         <?php } else { ?>
-                            <span>Du ser lige nu <strong>CPH PIX'</strong> program. <a href="program.php?festival=buster">Skift til BUSTER</a></span>.</p>
+                            <span>Du ser lige nu <strong>CPH PIX'</strong> program. <a href="<?php the_permalink(); ?>?festival=buster">Skift til BUSTER</a></span>.</p>
                         <?php } ?>
                 </div>
                 <div class="col-xs-12 col-sm-6">
