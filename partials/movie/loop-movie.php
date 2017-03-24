@@ -1,10 +1,11 @@
 <?php 
     $director = get_post_meta( get_the_ID(), '_movie_director', true );
+    $trailer = get_post_meta( get_the_ID(), '_movie_trailer', true );
 ?>
 
 <aside class="col-xs-12 col-sm-5 movie-sidebar">
     <div class="movie-card-container">
-        <div class="movie-card" data-trailer="trailer">
+        <div class="movie-card" <?php echo (isset($trailer) && !empty($trailer) ? 'data-trailer="trailer"' : ''); ?>>
             <?php the_post_thumbnail('large'); ?>
             <div class="movie-card-headline hidden-sm-up">
                 <h2><?php the_title(); ?></h2>
@@ -14,10 +15,12 @@
                     }
                 ?>
             </div>
-            <div class="movie-card-playbutton">
-                <i class="fa fa-play" aria-hidden="true"></i>
-            </div>
-            <paper-ripple></paper-ripple>
+            <?php if (isset($trailer) && !empty($trailer)) { ?>
+                <div class="movie-card-playbutton">
+                    <i class="fa fa-play" aria-hidden="true"></i>
+                </div>
+                <paper-ripple></paper-ripple>
+            <?php } ?>
         </div>
         <div class="movie-card-buttons">
             <a href="#0" class="button">Køb Billet
@@ -109,7 +112,7 @@
     <div class="trailer-overlay-content">
         <div class="movie-card-container">
             <div class="movie-card">
-                <iframe id="trailer-iframe" src="https://www.youtube.com/embed/FotoMsSvr8g?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                <iframe id="trailer-iframe" src="https://www.youtube.com/embed/<?php echo (isset($trailer) && !empty($trailer) ? $trailer : ''); ?>?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="movie-card-buttons">
                 <a href="#0" class="button">Køb Billet
