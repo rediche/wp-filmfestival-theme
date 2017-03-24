@@ -5,7 +5,7 @@
 <aside class="col-xs-12 col-sm-5 movie-sidebar">
     <div class="movie-card-container">
         <div class="movie-card" data-trailer="trailer">
-            <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail('large'); ?>
             <div class="movie-card-headline hidden-sm-up">
                 <h2><?php the_title(); ?></h2>
                 <?php 

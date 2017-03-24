@@ -43,7 +43,7 @@
     <div class="movie-card-container">
         <a href="<?php the_permalink(); ?>">
             <div class="movie-card animated">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail('large'); ?>
                 <div class="movie-card-headline">
                     <h2><?php the_title(); ?></h2>
                     <p>Instr.: Anne Zohra Berrached</p>
