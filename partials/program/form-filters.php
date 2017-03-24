@@ -84,15 +84,15 @@
                     <h4 class="program-filter-subheading">Vælg sprog<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
                         <label for="lang-danish" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="danish" id="lang-danish">
+                            <input type="checkbox" name="lang[]" value="dansk" id="lang-danish">
                             <span>Dansk</span>
                         </label>
                         <label for="lang-english" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="english" id="lang-english">
+                            <input type="checkbox" name="lang[]" value="engelsk" id="lang-english">
                             <span>Engelsk</span>
                         </label>
                         <label for="lang-german" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="german" id="lang-german">
+                            <input type="checkbox" name="lang[]" value="tysk" id="lang-german">
                             <span>Tysk</span>
                         </label>
                     </div>
