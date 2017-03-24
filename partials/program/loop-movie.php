@@ -1,9 +1,45 @@
+<?php
+    $original_title = get_post_meta( get_the_ID(), '_movie_original_title', true );
+    $title          = get_post_meta( get_the_ID(), '_movie_title', true );
+    $country        = get_post_meta( get_the_ID(), '_movie_country', true );
+    $year           = get_post_meta( get_the_ID(), '_movie_year', true );
+    $duration       = get_post_meta( get_the_ID(), '_movie_duration', true );
+    $director       = get_post_meta( get_the_ID(), '_movie_director', true );
+    $producer       = get_post_meta( get_the_ID(), '_movie_producer', true );
+    $manuscript     = get_post_meta( get_the_ID(), '_movie_manuscript', true );
+    $actors         = get_post_meta( get_the_ID(), '_movie_actors', true );
+    $camera         = get_post_meta( get_the_ID(), '_movie_camera', true );
+    $editing        = get_post_meta( get_the_ID(), '_movie_editing', true );
+    $sound          = get_post_meta( get_the_ID(), '_movie_sound', true );
+    $music          = get_post_meta( get_the_ID(), '_movie_music', true );
+    $production     = get_post_meta( get_the_ID(), '_movie_production', true );
+    $version        = get_post_meta( get_the_ID(), '_movie_version', true );
+    $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
+    $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
+?>
+
 <div class="col-xs-12 col-sm-6 col-md-4 program-list-item"
-        data-subtitles="true"
-        data-language="german"
-        data-genre="drama"
-        data-venue="imperial"
-        data-days="1-10 2-10">
+        <?php 
+            if (isset($subtitles) && !empty($subtitles)) {
+                if ($subtitles == 'yes') {
+                    echo 'data-subtitles="true"';
+                } else {
+                    echo 'data-subtitles="false"';
+                }
+            }
+        ?>
+        <?php
+            if (isset($version) && !empty($version)) {
+                echo 'data-language="' . strtolower($version) . '"';
+            }
+        ?>
+        <?php
+            if (isset($genre) && !empty($genre)) {
+                echo 'data-genre="' . strtolower($genre) . '"';
+            }
+        ?>
+        <?php // TODO: how to venue? ?>
+        <?php // TODO: how to days? ?>>
     <div class="movie-card-container">
         <a href="<?php the_permalink(); ?>">
             <div class="movie-card animated">
