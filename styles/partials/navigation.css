@@ -5,6 +5,13 @@
     z-index: 99;
 }
 
+@media screen and (min-width: 48rem) {
+    .admin-bar .main-navigation {
+        top: 32px;
+    }
+}
+
+
 .main-navigation-container {
     background-color: var(--color-black);
     padding: 0 1em;
