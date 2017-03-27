@@ -10,6 +10,24 @@ document.addEventListener('DOMContentLoaded', event => {
             /* Slå link fra */
             event.preventDefault();
 
+            var getCurrentMovies = JSON.parse(localStorage.getItem('movies'));
+
+            if (getCurrentMovies === null) {
+                getCurrentMovies = [];
+            }
+
+            var newMovie = {
+                "id": 0,
+                "title": "24 Weeks",
+                "image": "18405a",
+                "content": "Livet er godt hos standupperen Astrid. Hun har succes og gang i karrieren, et lækkert hus i forstaden, en sød kæreste-skråstreg-manager...",
+                "director": "Anne Zohra Berrached"
+            };
+
+            getCurrentMovies.push(newMovie);
+
+            localStorage.setItem('movies', getCurrentMovies);
+
             /* Toggle class'en "open" */
             console.log("Clicked myPix Button");
             mypixToast.open();
