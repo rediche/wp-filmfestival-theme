@@ -41,8 +41,6 @@
                                 )
                             );
 
-                            var_dump($collection);
-
                             $seriesMovieLoop = new WP_Query( $args );
                             while ( $seriesMovieLoop->have_posts() ) : $seriesMovieLoop->the_post();
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
