@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', event => {
         if (localStorage.getItem('movies') != null) {
             console.log("Already got some movies");
         } else {
-            var movies = [{
+            /*var movies = [{
                 "id": 0,
                 "title": "24 Weeks",
                 "image": "18405a",
@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', event => {
                 "image": "18453a",
                 "content": "De voksne kan være dæmoner i børnenes verden. Til tider i skræmmende bogstavelig forstand. Philippe Lesage...",
                 "director": "Philippe Lesage"
-            }];
+            }];*/
+
+            var movies = [];
 
             localStorage.setItem('movies', JSON.stringify(movies));
         }
@@ -78,7 +80,6 @@ document.addEventListener('DOMContentLoaded', event => {
         var movieCardTemplate = document.getElementById('movieTemplate');
 
         retrievedMovies.forEach(function(movie) {
-
             var template = movieCardTemplate.content.cloneNode(true);
 
             template.querySelector('[data-movie-id]').setAttribute('data-movie-id', movie.id);
@@ -140,9 +141,11 @@ document.addEventListener('DOMContentLoaded', event => {
                 "image": "17634a",
                 "date": "Fre. 17/03/17",
                 "time": "18.20"
-            }];
+            }];*/
 
-            localStorage.setItem('tickets', JSON.stringify(tickets));*/
+            var tickets = [];
+
+            localStorage.setItem('tickets', JSON.stringify(tickets));
         }
 
         retrievedTickets = JSON.parse(localStorage.getItem('tickets'));
