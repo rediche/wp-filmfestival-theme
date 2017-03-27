@@ -112,7 +112,7 @@
     <template id="movieTemplate">
         <div class="col-xs-12 col-sm-6 col-md-4" data-movie-id>
             <div class="movie-card-container">
-                <a href="filmside.php">
+                <a href="filmside.php" data-movie-permalink>
                     <div class="movie-card animated">
                         <img src="images/movies/thumbs/18453a_thumb.jpg" alt="..." data-movie-image>
                         <div class="movie-card-headline">

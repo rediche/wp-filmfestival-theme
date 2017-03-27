@@ -17,16 +17,17 @@ document.addEventListener('DOMContentLoaded', event => {
             }
 
             var newMovie = {
-                "id": 0,
-                "title": "24 Weeks",
-                "image": "18405a",
-                "content": "Livet er godt hos standupperen Astrid. Hun har succes og gang i karrieren, et lækkert hus i forstaden, en sød kæreste-skråstreg-manager...",
-                "director": "Anne Zohra Berrached"
+                "id": element.getAttribute('data-movie-id'),
+                "title": element.getAttribute('data-movie-title'),
+                "permalink": element.getAttribute('data-movie-permalink'),
+                "image": element.getAttribute('data-movie-image'),
+                "content": element.getAttribute('data-movie-content'),
+                "director": element.getAttribute('data-movie-director')
             };
 
             getCurrentMovies.push(newMovie);
 
-            localStorage.setItem('movies', getCurrentMovies);
+            localStorage.setItem('movies', JSON.stringify(getCurrentMovies));
 
             /* Toggle class'en "open" */
             console.log("Clicked myPix Button");
@@ -69,28 +70,7 @@ document.addEventListener('DOMContentLoaded', event => {
         if (localStorage.getItem('movies') != null) {
             console.log("Already got some movies");
         } else {
-            /*var movies = [{
-                "id": 0,
-                "title": "24 Weeks",
-                "image": "18405a",
-                "content": "Livet er godt hos standupperen Astrid. Hun har succes og gang i karrieren, et lækkert hus i forstaden, en sød kæreste-skråstreg-manager...",
-                "director": "Anne Zohra Berrached"
-            },{
-                "id": 1,
-                "title": "Det hvide folk",
-                "image": "17634a",
-                "content": "Alex bliver samlet op foran en grønthandler og ført til et underjordisk fængsel for ubudne gæster, der skal deporteres fra Sverige...",
-                "director": "Lisa Aschan"
-            }, {
-                "id": 2,
-                "title": "The Demons",
-                "image": "18453a",
-                "content": "De voksne kan være dæmoner i børnenes verden. Til tider i skræmmende bogstavelig forstand. Philippe Lesage...",
-                "director": "Philippe Lesage"
-            }];*/
-
             var movies = [];
-
             localStorage.setItem('movies', JSON.stringify(movies));
         }
 
@@ -103,6 +83,7 @@ document.addEventListener('DOMContentLoaded', event => {
             template.querySelector('[data-movie-id]').setAttribute('data-movie-id', movie.id);
             template.querySelector('[data-movie-remove]').setAttribute('data-movie-remove', movie.id);
             template.querySelector('[data-movie-title]').innerHTML = movie.title;
+            template.querySelector('[data-movie-permalink]').href = movie.permalink;
             template.querySelector('[data-movie-image]').src = movie.image;
             template.querySelector('[data-movie-content]').innerHTML = movie.content;
             template.querySelector('[data-movie-director]').innerHTML = movie.director;
