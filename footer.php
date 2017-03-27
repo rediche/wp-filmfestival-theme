@@ -130,7 +130,7 @@
                     <a href="#0" class="button"><span data-movie-ticket>Køb Billet</span>
                         <paper-ripple></paper-ripple>
                     </a>
-                    <a href="#0" class="button black"><span data-movie-program>Tilføj til Program</span>
+                    <a href="#0" class="button black"><span data-movie-program>Føj til Program</span>
                         <paper-ripple></paper-ripple>
                     </a>
                 </div>
