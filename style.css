@@ -51,6 +51,7 @@ Version: 0.1
 @import url(./styles/pages/program.css);
 @import url(./styles/pages/post.css);
 @import url(./styles/pages/mypix.css);
+@import url(./styles/pages/404.css);
 
 body {
 	background-image: url(./images/backgrounds/18405a_dark.jpg);
