@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', event => {
-    /* Toggle MyPIX toast */
     var newsletterSignupForm = document.querySelectorAll('.newsletter-signup');
-    //var signupToNewsletterButton = document.querySelectorAll('.signup-to-newsletter');
     var newsletterToast = document.getElementById('newsletterToast');
     var newsletterToastError = document.getElementById('newsletterToastError');
 
