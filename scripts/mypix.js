@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', event => {
             template.querySelector('[data-movie-id]').setAttribute('data-movie-id', movie.id);
             template.querySelector('[data-movie-remove]').setAttribute('data-movie-remove', movie.id);
             template.querySelector('[data-movie-title]').innerHTML = movie.title;
-            template.querySelector('[data-movie-image]').src = 'images/movies/thumbs/' + movie.image + '_thumb.jpg';
+            template.querySelector('[data-movie-image]').src = movie.image;
             template.querySelector('[data-movie-content]').innerHTML = movie.content;
             template.querySelector('[data-movie-director]').innerHTML = movie.director;
 
