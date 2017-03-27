@@ -24,6 +24,13 @@
     margin-top: 0;
 }
 
+.content-card-button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-light-grey);
+    color: var(--color-grey);
+}
+
 /* Content Card Trailer */
 .content-card.trailer {
     padding: 0;

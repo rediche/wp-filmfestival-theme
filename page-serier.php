@@ -41,12 +41,20 @@
                                 )
                             );
 
+                            var_dump($collection);
+
                             $seriesMovieLoop = new WP_Query( $args );
                             while ( $seriesMovieLoop->have_posts() ) : $seriesMovieLoop->the_post();
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
                     </div>
+                    <div class="row center-xs">
+                        <div class="col-xs col-sm-6">
+                            <a href="<?php echo get_term_link($collection->term_id) ?>" class="button content-card-button">Se hele serien</a>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             <?php endforeach; ?>
