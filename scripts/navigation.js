@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', event => {
     var burgerElementIcon = document.querySelector('.burger .fa');
     var navigationMenu = document.querySelector('.main-navigation-items');
     
-    if (burgerElement) {
+    if (burgerElement && burgerElementIcon && navigationMenu) { // Check om vi rent faktisk fik fat i Burger Elementet
         burgerElement.addEventListener('click', function(event) {
             navigationMenu.classList.toggle('open');
             burgerElementIcon.classList.toggle('fa-bars');
