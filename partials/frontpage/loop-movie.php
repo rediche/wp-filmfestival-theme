@@ -18,7 +18,13 @@
             <a href="#0" class="button">Køb Billet
                 <paper-ripple></paper-ripple>
             </a>
-            <a href="#0" class="button black add-to-mypix">Tilføj til MyPIX
+            <a href="#0" class="button black add-to-mypix"
+                data-movie-id="<?php the_ID(); ?>"
+                data-movie-title="<?php the_title(); ?>"
+                data-movie-permalink="<?php the_permalink(); ?>"
+                data-movie-image="<?php the_post_thumbnail_url('large'); ?>"
+                data-movie-content="<?php echo substr(get_the_content(), 0, 200) . '...'; ?>"
+                data-movie-director="<?php echo get_post_meta( get_the_ID(), '_movie_director', true ); ?>">Føj til MyPIX
                 <paper-ripple></paper-ripple>
             </a>
         </div>

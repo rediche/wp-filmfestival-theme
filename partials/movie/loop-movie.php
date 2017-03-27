@@ -32,7 +32,7 @@
                 data-movie-permalink="<?php the_permalink(); ?>"
                 data-movie-image="<?php the_post_thumbnail_url('large'); ?>"
                 data-movie-content="<?php echo substr(get_the_content(), 0, 200) . '...'; ?>"
-                data-movie-director="<?php echo get_post_meta( get_the_ID(), '_movie_director', true ); ?>">Tilføj til MyPIX
+                data-movie-director="<?php echo get_post_meta( get_the_ID(), '_movie_director', true ); ?>">Føj til MyPIX
                 <paper-ripple></paper-ripple>
             </a>
         </div>
