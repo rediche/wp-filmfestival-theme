@@ -28,12 +28,13 @@
         <div class="row">
             <div class="col-xs">
                 <div class="content-card slider-card">
-                    <h2 class="content-card-extras-title no-margin">Lignende film</h2>
+                    <h2 class="content-card-extras-title no-margin">Anbefalede film</h2>
                     <div class="slider-items row">
                         <?php
                             $args = array( 
                                 'post_type' => 'movie', 
                                 'posts_per_page' => 3,
+                                'post__not_in' => array( get_the_ID() ),
                                 'orderby' => 'rand'
                             );
                             $selectedMoviesLoop = new WP_Query( $args );
