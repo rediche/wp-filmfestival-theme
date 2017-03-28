@@ -12,7 +12,7 @@
 
                     <div class="row program-list">
                         <?php
-                            $args = array( 'post_type' => 'movie' );
+                            $args = array( 'post_type' => 'movie', 'posts_per_page' => -1 );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
                                 get_template_part( 'partials/program/loop', 'movie' );
