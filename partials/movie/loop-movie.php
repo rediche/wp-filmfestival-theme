@@ -1,6 +1,21 @@
-<?php 
-    $director = get_post_meta( get_the_ID(), '_movie_director', true );
-    $trailer = get_post_meta( get_the_ID(), '_movie_trailer', true );
+<?php
+    $original_title = get_post_meta( get_the_ID(), '_movie_original_title', true );
+    $title          = get_post_meta( get_the_ID(), '_movie_title', true );
+    $country        = get_post_meta( get_the_ID(), '_movie_country', true );
+    $year           = get_post_meta( get_the_ID(), '_movie_year', true );
+    $duration       = get_post_meta( get_the_ID(), '_movie_duration', true );
+    $director       = get_post_meta( get_the_ID(), '_movie_director', true );
+    $producer       = get_post_meta( get_the_ID(), '_movie_producer', true );
+    $manuscript     = get_post_meta( get_the_ID(), '_movie_manuscript', true );
+    $actors         = get_post_meta( get_the_ID(), '_movie_actors', true );
+    $camera         = get_post_meta( get_the_ID(), '_movie_camera', true );
+    $editing        = get_post_meta( get_the_ID(), '_movie_editing', true );
+    $sound          = get_post_meta( get_the_ID(), '_movie_sound', true );
+    $music          = get_post_meta( get_the_ID(), '_movie_music', true );
+    $production     = get_post_meta( get_the_ID(), '_movie_production', true );
+    $version        = get_post_meta( get_the_ID(), '_movie_version', true );
+    $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
+    $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
 ?>
 
 <aside class="col-xs-12 col-sm-5 movie-sidebar">
@@ -145,6 +160,52 @@
     <?php the_content(); ?>
     
     <footer class="movie-description-footer">
-        <p><strong>Originaltitel</strong> 24 Wochen <strong>Titel</strong> 24 Weeks <strong>Land</strong> Tyskland <strong>Produktionsår</strong> 2016 <strong>Længde</strong> 102 min. <strong>Instruktør</strong> Anne Zohra Berrached <strong>Producer</strong> Johannes Jancke, Tobias Ebner, Melanie Berke <strong>Manuscript</strong> Anne Zohra Berrached, Carl Gerber <strong>Medvirkende</strong> Julia Jentsch, Bjarne Mädel, Johanna Gastdorf, Emilia Pieske, Maria Dragus <strong>Kamera</strong> Friede Clausz <strong>Lyd</strong> Marc Fragstein <strong>Klip</strong> Denys Darahan <strong>Musik</strong> Jasmin Reuter <strong>Produktion</strong> Zero One Film GmbH, Zweites Deutsches Fernsehen (ZDF), Filmakademie Baden-Württemberg <strong>Version</strong> Tysk tale med engelske undertekster</p>
+        <p>
+            <?php if (isset($original_title) && !empty($original_title)) {
+                echo '<strong>Originaltitel</strong> '. $original_title;
+            } ?>
+            <?php if (isset($title) && !empty($title)) {
+                echo '<strong>Titel</strong> '. $title;
+            } ?>
+            <?php if (isset($country) && !empty($country)) {
+                echo '<strong>Land</strong> '. $country;
+            } ?>
+            <?php if (isset($year) && !empty($year)) {
+                echo '<strong>Produktionsår</strong> '. $year;
+            } ?>
+            <?php if (isset($duration) && !empty($duration)) {
+                echo '<strong>Længde</strong> '. $duration .' min.';
+            } ?>
+            <?php if (isset($director) && !empty($director)) {
+                echo '<strong>Instruktør</strong> '. $director;
+            } ?>
+            <?php if (isset($producer) && !empty($producer)) {
+                echo '<strong>Producer</strong> '. $producer;
+            } ?>
+            <?php if (isset($manuscript) && !empty($manuscript)) {
+                echo '<strong>Manuskript</strong> '. $manuscript;
+            } ?>
+            <?php if (isset($actors) && !empty($actors)) {
+                echo '<strong>Medvirkende</strong> '. $actors;
+            } ?>
+            <?php if (isset($camera) && !empty($camera)) {
+                echo '<strong>Kamera</strong> '. $camera;
+            } ?>
+            <?php if (isset($sound) && !empty($sound)) {
+                echo '<strong>Lyd</strong> '. $sound;
+            } ?>
+            <?php if (isset($editing) && !empty($editing)) {
+                echo '<strong>Klip</strong> '. $editing;
+            } ?>
+            <?php if (isset($music) && !empty($music)) {
+                echo '<strong>Musik</strong> '. $music;
+            } ?>
+            <?php if (isset($production) && !empty($production)) {
+                echo '<strong>Produktion</strong> '. $production;
+            } ?>
+            <?php if (isset($subtitles) && !empty($subtitles) && isset($subtitlelang) && !empty($subtitlelang)) {
+                echo '<strong>Undertekster</strong> på '. $subtitlelang;
+            } ?>
+        </p>
     </footer>
 </section>
