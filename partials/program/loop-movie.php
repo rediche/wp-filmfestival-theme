@@ -46,7 +46,11 @@
                 <?php the_post_thumbnail('large'); ?>
                 <div class="movie-card-headline">
                     <h2><?php the_title(); ?></h2>
-                    <p>Instr.: Anne Zohra Berrached</p>
+                    <?php 
+                        if (isset($director) && !empty($director)) {
+                            ?><p>Instr.: <?php echo $director; ?></p><?php
+                        }
+                    ?>
                 </div>
                 <div class="movie-card-content">
                     <p><?php echo substr(get_the_content(), 0, 200) . '...'; ?></p>

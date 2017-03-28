@@ -5,7 +5,7 @@
                 <?php the_post_thumbnail('large'); ?>
                 <div class="movie-card-headline">
                     <h2><?php the_title(); ?></h2>
-                    <p>Instr.: Anne Zohra Berrached</p>
+                    <p>Instr.: <?php echo get_post_meta( get_the_ID(), '_movie_director', true ); ?></p>
                 </div>
                 <div class="movie-card-content">
                     <p><?php echo substr(get_the_content(), 0, 200) . '...'; ?></p>
