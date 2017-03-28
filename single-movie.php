@@ -31,7 +31,11 @@
                     <h2 class="content-card-extras-title no-margin">Lignende film</h2>
                     <div class="slider-items row">
                         <?php
-                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
+                            $args = array( 
+                                'post_type' => 'movie', 
+                                'posts_per_page' => 3,
+                                'orderby' => 'rand'
+                            );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
                                 get_template_part( 'partials/frontpage/loop', 'movie' );

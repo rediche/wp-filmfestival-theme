@@ -53,10 +53,14 @@
                 </div>
 
                 <div class="content-card slider-card">
-                    <h2 class="content-card-extras-title no-margin">Kommende film</h2>
+                    <h2 class="content-card-extras-title no-margin">Film fra vores program</h2>
                     <div class="slider-items row">
                         <?php
-                            $args = array( 'post_type' => 'movie', 'posts_per_page' => 6 );
+                            $args = array( 
+                                'post_type' => 'movie', 
+                                'posts_per_page' => 6,
+                                'orderby' => 'rand'
+                            );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
