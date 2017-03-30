@@ -41,20 +41,35 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="row">
-                            <?php for($i = 0; $i < 3; $i++) { ?>
-                            <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="post-card">
-                                    <a href="post.php">
-                                        <div class="post-card-image">
-                                            <h2 class="post-card-title">Vi søger en outreach-koordinator (løntilskud)</h2>
-                                        </div>
-                                        <div class="post-card-body">
-                                            <p>Vil du være med til at tilrettelægge og opbygge et nyt og stærkt kontaktlærernetværk for skoleprogrammet på Danmarks største spillefilmfestival?</p>
-                                        </div>
-                                    </a>
-                                    <paper-ripple></paper-ripple>
+                            <?php
+                            $args = array( 
+                                'post_type' => 'post', 
+                                'posts_per_page' => 6,
+                                'orderby' => 'rand'
+                            );
+                            $selectedNewsLoop = new WP_Query( $args );
+                            while ( $selectedNewsLoop->have_posts() ) : $selectedNewsLoop->the_post(); ?>
+
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div class="post-card">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <div class="post-card-image"
+                                                 <?php if (has_post_thumbnail()) { ?>
+                                                     style="background-image:url('<?php the_post_thumbnail_url('large'); ?>');"
+                                                 <?php } ?>>
+                                                <h2 class="post-card-title"><?php the_title(); ?></h2>
+                                            </div>
+                                            <div class="post-card-body">
+                                                <p><?php echo substr(wp_strip_all_tags(get_the_content()), 0, 225) . '...'; ?></p>
+                                            </div>
+                                        </a>
+                                        <paper-ripple></paper-ripple>
+                                    </div>
                                 </div>
-                            </div>
+
+                            <?php endwhile; ?>
+                            <?php for($i = 0; $i < 3; $i++) { ?>
+                            
                             <?php } ?>
                         </div>
                     </div>
