@@ -19,7 +19,7 @@ get_header(); ?>
                                                 <h2 class="post-card-title"><?php the_title(); ?></h2>
                                             </div>
                                             <div class="post-card-body">
-                                                <p><?php the_content(); ?></p>
+                                                <p><?php echo substr(wp_strip_all_tags(get_the_content()), 0, 225) . '...'; ?></p>
                                             </div>
                                         </a>
                                         <paper-ripple></paper-ripple>
