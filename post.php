@@ -9,7 +9,10 @@
                         <h1 class="content-card-title">Vi søger en outreach koordinator (løntilskud)</h1>
                     </div>
                     <div class="col-xs-12">
-                        <div class="post-image"></div>
+                        <div class="post-image"
+                             <?php if (has_post_thumbnail()) { ?>
+                                style="background-image:url('<?php the_post_thumbnail_url('large'); ?>');"
+                             <?php } ?>></div>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                         <p class="post-lead">Vil du være med til at tilrettelægge og opbygge et nyt og stærkt kontaktlærernetværk for skoleprogrammet på Danmarks største spillefilmfestival?</p>

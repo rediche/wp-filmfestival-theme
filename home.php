@@ -15,7 +15,10 @@ get_header(); ?>
                                 <div class="col-xs-12 col-sm-6 col-md-4">
                                     <div class="post-card">
                                         <a href="<?php the_permalink(); ?>">
-                                            <div class="post-card-image">
+                                            <div class="post-card-image" 
+                                                 <?php if (has_post_thumbnail()) { ?>
+                                                 style="background-image:url('<?php the_post_thumbnail_url('large'); ?>');"
+                                                 <?php } ?>>
                                                 <h2 class="post-card-title"><?php the_title(); ?></h2>
                                             </div>
                                             <div class="post-card-body">
