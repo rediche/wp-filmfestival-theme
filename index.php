@@ -16,7 +16,7 @@
                              <?php } ?>></div>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                        <?php the_content(); ?>
+                        <div class="post-content"><?php the_content(); ?></div>
                     </div>
                 </div>
             <?php endwhile; else : ?>
