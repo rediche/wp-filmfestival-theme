@@ -45,7 +45,8 @@ function initalizeFilters() {
 function initializeFilterToggles() {
     var filters = [
         "subtitles",
-        "language"
+        "language",
+        "genre"
     ];
 
     handleMultipleFilters(filters);
@@ -161,6 +162,10 @@ function programSearch(searchInput) {
 }
 
 function attributeMatches(attribute, input) {
+    if (attribute === null) {
+        return false;
+    }
+
     attribute = attribute.toLowerCase();
     input = input.toLowerCase();
 

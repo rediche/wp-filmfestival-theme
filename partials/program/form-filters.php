@@ -51,18 +51,18 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-genre" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg genre<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
-                        <label for="genre-action" class="program-filter-group">
-                            <input type="checkbox" name="genre[]" value="action" id="genre-action">
-                            <span>Action</span>
-                        </label>
-                        <label for="genre-animation" class="program-filter-group">
-                            <input type="checkbox" name="genre[]" value="animation" id="genre-animation">
-                            <span>Animation</span>
-                        </label>
-                        <label for="genre-drama" class="program-filter-group">
-                            <input type="checkbox" name="genre[]" value="drama" id="genre-drama">
-                            <span>Drama</span>
-                        </label>
+                        <?php 
+                            $genres = get_terms( array(
+                                'taxonomy' => 'genre',
+                                'hide_empty' => true
+                            ) );
+                        ?>
+                        <?php foreach($genres as $genre) : ?>
+                            <label for="genre-<?php echo $genre->slug; ?>" class="program-filter-group">
+                                <input type="checkbox" name="genre[]" value="<?php echo strtolower($genre->name); ?>" id="genre-<?php echo $genre->slug; ?>">
+                                <span><?php echo $genre->name; ?></span>
+                            </label>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 

@@ -17,7 +17,12 @@
     $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
     $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
 
-    $movieMeta = $original_title.' '.$title.' '.$country.' '.$year.' '.$duration.' '.$producer.' '.$manuscript.' '.$actors.' '.$camera.' '.$editing.' '.$sound.' '.$music.' '.$production.' '.$version.' '.$subtitlelang.' '.get_the_title();
+    $genre = '';
+    foreach(wp_get_post_terms( get_the_ID(), 'genre') as $tempGenre) :
+        $genre .= strtolower($tempGenre->name);
+    endforeach;
+
+    $movieMeta = $original_title.' '.$title.' '.$country.' '.$year.' '.$duration.' '.$producer.' '.$manuscript.' '.$actors.' '.$camera.' '.$editing.' '.$sound.' '.$music.' '.$production.' '.$version.' '.$subtitlelang.' '.get_the_title() .' '.$genre;
 ?>
 
 <div class="col-xs-12 col-sm-6 col-md-4 program-list-item"
