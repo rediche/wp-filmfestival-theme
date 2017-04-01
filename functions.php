@@ -12,7 +12,7 @@ function add_theme_scripts() {
     //wp_enqueue_script( 'jquery' );
 
     /* Bower Components */
-    wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/bower_components/mixitup/dist/mixitup.min.js');
+    //wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/bower_components/mixitup/dist/mixitup.min.js');
 
     /* Themes own JS */
     wp_enqueue_script( 'program', get_template_directory_uri() . '/scripts/program.js' );

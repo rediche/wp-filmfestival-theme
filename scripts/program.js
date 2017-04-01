@@ -1,6 +1,14 @@
 document.addEventListener('DOMContentLoaded', event => {
+    initalizeFilters();
+    initializeFilterToggles();
+    initializeSearch();
+});
+
+function initalizeFilters() {
+    console.log("Initializing Filters");
+
     /* Toggle filtre */
-    var filterElement  = document.querySelector('.program-search-filter');
+    var filterElement = document.querySelector('.program-search-filter');
     var filterContainer = document.querySelector('.program-filter');
 
     if (filterElement && filterContainer) {
@@ -32,122 +40,195 @@ document.addEventListener('DOMContentLoaded', event => {
             }
         });
     }
+}
 
-    /* Submit form */
-    var submitButton = document.querySelector('[data-filter-submit]');
-    var resetButton = document.querySelector('[data-filter-reset]');
-    var filterForm = document.querySelector('[data-filter-form]');
+function initializeFilterToggles() {
+    var filters = [
+        "subtitles",
+        "language"
+    ];
 
-    if (submitButton) {
-        submitButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            mixer.forceRefresh();
-            //filterForm.submit();
-        });
-    }
+    /*filters.forEach(filter => {
+        enableCheckboxToggles(filter);
+    });*/
 
-    if (resetButton) {
-        resetButton.addEventListener('click', function(event) {
-            event.preventDefault();
-            mixer.filter('all');
-            filterForm.reset();
-        });
-    }
+    handleMultipleFilters(filters);
+}
 
-    /* Mixitup */
-    var mixitupContainer = document.querySelector('.program-list');
+function enableCheckboxToggles(name) {
+    /* Gem alle elementerne for navnet givet til funktionen */
+    var elements = document.querySelectorAll('.program-filter-' + name + ' label');
 
-    if(mixitupContainer) {
-        var mixer = mixitup(mixitupContainer, {
-            selectors: {
-                target: '.program-list-item'
-            },
-            animation: {
-                duration: 300
-            }
-        });
-    }
+    /* Hvis elements har en værdi */
+    if (elements) {
+        /* For hver af elements gør: */
+        elements.forEach(function(element) {
+            /* Når elementet ændre sig */
+            element.addEventListener('change', function(event) {
+                var programListItems = getProgramListItems();
 
-    /* Mixitup filters */
-    enableCheckboxToggles('language');
-    enableCheckboxToggles('subtitles');
-    enableCheckboxToggles('genre');
-    enableCheckboxToggles('venue');
-    enableCheckboxToggles('days');
-    enableCheckboxToggles('festival');
+                programListItems.forEach(listItem => {
+                    attributeString = listItem.getAttribute('data-' + name);
 
-    function enableCheckboxToggles(name) {
-        /* Gem alle elementerne for navnet givet til funktionen */
-        var elements = document.querySelectorAll('.program-filter-' + name + ' label');
-
-        /* Hvis elements har en værdi */
-        if (elements) {
-            /* For hver af elements gør: */
-            elements.forEach(function(element) {
-                /* Hvis det enkelte element har børn */
-                if (element.hasChildNodes()) {
-                    /* Gem alle børnene til elementetet der er en checkbox */
-                    var childElements = element.querySelectorAll('input[type=checkbox]');
-                    /* Hvis der er nogle børn */ 
-                    if (childElements) {
-                        /* Kør igennem hvert barn */
-                        childElements.forEach(function(childElement) {
-                            /* Hvis barnet er checked */
-                            if (childElement.checked) {
-                                /* Slå filter til for det barn */
-                                mixer.toggleOn('[data-' + name + '*="' + childElement.value + '"]');
-                            }
-                        });
-                    }
-                }
-
-                /* Når elementet ændre sig */
-                element.addEventListener('change', function(event) {
-                    /* Hvis elementet er checked */
                     if (event.target.checked) {
-                        /* Slå filter til for elementet */
-                        mixer.toggleOn('[data-' + name + '*="' + event.target.value + '"]');
+                        if (attributeMatches(attributeString, event.target.value)) {
+                            listItem.setAttribute('data-movie-filter-show', true);
+                        } else {
+                            listItem.setAttribute('data-movie-filter-show', false);
+                        }
                     } else {
-                        /* Ellers slå det fra */
-                        mixer.toggleOff('[data-' + name + '*="' + event.target.value + '"]');
+                        listItem.setAttribute('data-movie-filter-show', true);
                     }
+                    
                 });
             });
-        }
+        });
     }
+}
 
-    /* Søgefelt */
+/*
+Lav tomt array
+
+Kør igennem filtre
+    Hvis filter er true
+        Tilføj filter navn og værdi til array
+
+Kør igennem film
+    Lav variabel der er false
+    Kør igennem true filtre
+        Hvis filter matcher film
+            Sæt variabel til true
+    Hvis variabel er true
+        Sæt filter show til true
+    Ellers 
+        Sæt filter show til false       
+*/
+
+function handleMultipleFilters(allFilterNames) {
+    var activatedFilters = [];
+
+    allFilterNames.forEach(filterName => {
+        var currentFilters = document.querySelectorAll('.program-filter-' + filterName + ' label');
+
+        currentFilters.forEach(currentFilter => {
+            var activatedFilter = generateFilterValuePair(filterName, currentFilter.firstElementChild.value, currentFilter.firstElementChild.checked);
+
+            activatedFilters.push(activatedFilter);
+            applyMultipleFilters(activatedFilters);
+
+            currentFilter.addEventListener('change', event => {
+                if (activatedFilters.indexOf(activatedFilter) !== -1) {
+                    activatedFilters[activatedFilters.indexOf(activatedFilter)].checked = event.target.checked;
+                    //activatedFilters.push(activatedFilter);
+                    applyMultipleFilters(activatedFilters);
+                } else {
+                    console.log("Already got that filter activated.");
+                }
+            });
+        });
+    });
+}
+
+function applyMultipleFilters(activatedFiltersArray) {
+    //console.log("Activated Filters Array", activatedFiltersArray);
+    var programListItems = getProgramListItems();
+
+    programListItems.forEach(listItem => {
+        var shouldShow = false;
+        activatedFiltersArray.forEach(activatedFilter => {
+            //console.log("Activated Filter", activatedFilter);
+            attributeString = listItem.getAttribute('data-' + activatedFilter.filter);
+
+            if (activatedFilter.checked === true) {
+                if (attributeMatches(attributeString, activatedFilter.value)) {
+                    console.log("Match", listItem.getAttribute('data-' + activatedFilter.filter));
+                    shouldShow = true;
+                } else {
+                    console.log("No match");
+                }
+            } else if (hasCheckedFilters(activatedFiltersArray) === 0) {
+                shouldShow = true;
+            }
+        });
+
+        if (shouldShow === true) {
+            listItem.setAttribute('data-movie-filter-show', true);
+        } else {
+            listItem.setAttribute('data-movie-filter-show', false);
+        }
+        
+    });
+}
+
+function hasCheckedFilters(allFiltersArray) {
+    count = 0;
+    allFiltersArray.forEach(filter => {
+        if (filter.checked === true) {
+            count++;
+        }
+    });
+
+    return count;
+}
+
+/* Generate an object with a key value pair */
+function generateFilterValuePair(getKey, getValue, getChecked) {
+    return { 
+        filter: getKey,
+        value: getValue,
+        checked: getChecked
+    };
+}
+
+function initializeSearch() {
+    console.log("Initializing Search");
+
     var searchField = document.querySelector('.program-search-field');
+    var searchTypingInterval = 500;
+    var searchTypingTimer;
 
     if (searchField) {
-        searchField.addEventListener('keyup', function(event) {
-            programSearch(event.target.value);
-        });
-    }
+        console.log("Search Field Found");
 
-    function programSearch(searchQuery) {
-        var searchQueryFormatted = searchQuery.toLowerCase();
-        var searchAttributes = [
-            'director', 
-            'year'
-        ];
-
-        searchAttributes.forEach(function(attribute) {
-            //mixer.toggleOn([])
+        searchField.addEventListener('keyup', event => {
+            clearTimeout(searchTypingTimer);
+            searchTypingTimer = setTimeout(function() {
+                programSearch(event.target.value);
+            }, searchTypingInterval);
         });
 
-        /*var movieCards = document.querySelectorAll('.movie-card');
-
-        movieCards.forEach(function(element) {
-            var elementContent = element.textContent.toLowerCase();
-            var elementMovieId = element.getAttribute('data-movie-id');
-            if (elementContent.indexOf(searchQueryFormatted) >= 0) {
-                mixer.toggleOn('[data-movie="' + elementMovieId + '"]');
-            } else {
-                mixer.toggleOff('[data-movie="' + elementMovieId + '"]');
-            }
-        });*/
+        /* Hvis ?query=etellerandet så kør en søgning med det samme */
+        if (searchField.value != "") {
+            programSearch(searchField.value);
+        }
     }
+}
 
+function programSearch(searchInput) {
+    var programListItems = getProgramListItems();
 
-});
+    programListItems.forEach(listItem => {
+        attributeString = listItem.getAttribute('data-movie-meta');
+
+        if (attributeMatches(attributeString, searchInput)) {
+            listItem.setAttribute('data-movie-search-show', true);
+        } else {
+            listItem.setAttribute('data-movie-search-show', false);
+        }
+    });
+}
+
+function attributeMatches(attribute, input) {
+    attribute = attribute.toLowerCase();
+    input = input.toLowerCase();
+
+    if (attribute.indexOf(input) != - 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getProgramListItems() {
+    return document.querySelectorAll('.program-list-item');
+}

@@ -177,6 +177,11 @@
     margin-bottom: 1rem;
 }
 
+.program-list-item[data-movie-filter-show="false"],
+.program-list-item[data-movie-search-show="false"] {
+    display: none;
+}
+
 /* Small up */
 @media screen and (min-width: 48rem) {
     .program-filter-subheading {

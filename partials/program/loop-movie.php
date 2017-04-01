@@ -16,9 +16,14 @@
     $version        = get_post_meta( get_the_ID(), '_movie_version', true );
     $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
     $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
+
+    $movieMeta = $original_title.' '.$title.' '.$country.' '.$year.' '.$duration.' '.$producer.' '.$manuscript.' '.$actors.' '.$camera.' '.$editing.' '.$sound.' '.$music.' '.$production.' '.$version.' '.$subtitlelang.' '.get_the_title();
 ?>
 
 <div class="col-xs-12 col-sm-6 col-md-4 program-list-item"
+     data-movie-search-show="true"
+     data-movie-filter-show="true"
+     data-movie-meta="<?php if (isset($movieMeta) && !empty($movieMeta)) { echo $movieMeta; } ?>"
         <?php 
             if (isset($subtitles) && !empty($subtitles)) {
                 if ($subtitles == 'yes') {
@@ -54,13 +59,6 @@
                 </div>
                 <div class="movie-card-content">
                     <p><?php echo substr(get_the_content(), 0, 200) . '...'; ?></p>
-                    <div class="movie-card-meta">
-                        <span>Instruktør: Anne Zohra Berrached</span>
-                        <span>År: 2016</span>
-                        <span>Land: Tyskland</span>
-                        <span>Original Titel: 24 Wochen</span>
-                        <span>Producer: Johannes Jancke, Tobias Ebner, Melanie Berke</span>
-                    </div>
                 </div>
                 <div class="movie-card-overlay"></div>
             </div>
