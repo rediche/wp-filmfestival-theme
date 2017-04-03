@@ -44,7 +44,7 @@
 
                 <div class="content-card newsletter-signup-cta">
                     <h3 class="newsletter-signup-cta-heading">Tilmeld dig vores nyhedsbrev</h3>
-                    <p class="newsletter-signup-cta-subheading">Og få de seneste nyheder om hvilke film der spiller på <strong>CPH PIX</strong>.</p>
+                    <p class="newsletter-signup-cta-subheading">Og få de seneste nyheder om hvilke film der vises på <strong>KBHFILM</strong>.</p>
                     <form class="newsletter-signup">
                         <input type="email" class="newsletter-signup-text" placeholder="din@email.dk">
                         <span class="button newsletter-signup-button signup-to-newsletter">Tilmeld<paper-ripple></paper-ripple>
