@@ -18,7 +18,7 @@
     <div class="row program-filter">
         <div class="col-xs-12">
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 program-filter-days" data-dropdown>
+                <!--<div class="col-xs-12 col-sm-6 col-md-4 program-filter-days" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg dage<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown double-width">
                         <div class="row">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-genre" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg genre<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-4 program-filter-mood" data-dropdown>
+                <!--<div class="col-xs-12 col-sm-6 col-md-4 program-filter-mood" data-dropdown>
                     <h4 class="program-filter-subheading light">Vælg stemning<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
                         <label for="mood-tempo" class="program-filter-group">
@@ -114,7 +114,7 @@
                             <span>Thrills</span>
                         </label>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-subtitles">
                     <label for="subtitles" class="program-filter-group">
