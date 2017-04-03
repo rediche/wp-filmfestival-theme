@@ -140,7 +140,7 @@ function initializeSearch() {
             }, searchTypingInterval);
         });
 
-        /* Hvis ?query=etellerandet så kør en søgning med det samme */
+        /* Hvis ?query=etellerandet så kør en søgning med det samme efter "etellerandet" */
         if (searchField.value != "") {
             programSearch(searchField.value);
         }
