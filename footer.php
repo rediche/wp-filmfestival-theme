@@ -78,7 +78,7 @@
 
     <!-- Toast der kommer når man klikker på Tilføj til MyPIX -->
     <paper-toast id="mypixToast" text="Filmen er tilføjet til din MyPIX liste."></paper-toast>
-    <paper-toast id="mypixDeletedToast" class="error" text="Filmen er fjernet til din MyPIX liste."></paper-toast>
+    <paper-toast id="mypixDeletedToast" class="error" text="Filmen er fjernet fra din MyPIX liste."></paper-toast>
     <paper-toast id="mypixProgram" text="Filmvisningen er tilføjet til dit MyPIX Program."></paper-toast>
 
     <!-- Toast der kommer når man klikker på Sign Up til Newsletter -->
