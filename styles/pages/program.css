@@ -201,6 +201,14 @@
     }
 }
 
+/* Small only */
+@media screen and (min-width: 48rem) and (max-width: 64rem) {
+    .program-filter-update {
+        margin-right: 0;
+        margin-bottom: .5rem;
+    }
+}
+
 /* Medium up */
 @media screen and (min-width: 64rem) {
     .program-filter-dropdown {
