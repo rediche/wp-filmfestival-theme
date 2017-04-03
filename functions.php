@@ -49,8 +49,8 @@ function cphpix_init_person_shortcode( $atts ) {
         <div class="person-card-content">
             <p class="person-card-name"><?php echo $attributes['name']; ?></p>
             <p class="person-card-title"><?php echo $attributes['title']; ?></p>
-            <p class="person-card-mail"><?php echo $attributes['mail']; ?></p>
-            <p class="person-card-tel"><?php echo $attributes['tel']; ?></p>
+            <p class="person-card-mail"><a href="mailto:<?php echo $attributes['mail']; ?>" title="Send mail til <?php echo $attributes['name']; ?>"><?php echo $attributes['mail']; ?></a></p>
+            <p class="person-card-tel"><a href="tel:<?php echo $attributes['tel']; ?>" title="Ring til <?php echo $attributes['name']; ?>"><?php echo $attributes['tel']; ?></a></p>
         </div>
     </div>
 
