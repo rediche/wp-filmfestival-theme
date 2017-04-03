@@ -19,17 +19,17 @@
 
     $genre = '';
     foreach(wp_get_post_terms( get_the_ID(), 'genre') as $tempGenre) :
-        $genre .= strtolower($tempGenre->name);
+        $genre .= strtolower($tempGenre->name).' ';
     endforeach;
 
     $venue = '';
     foreach(wp_get_post_terms( get_the_ID(), 'venue') as $tempVenue) :
-        $venue .= strtolower($tempVenue->name);
+        $venue .= strtolower($tempVenue->name).' ';
     endforeach;
 
     $language = '';
     foreach(wp_get_post_terms( get_the_ID(), 'language') as $tempLang) :
-        $language .= strtolower($tempLang->name);
+        $language .= strtolower($tempLang->name).' ';
     endforeach;
 
     $movieMeta = '';
