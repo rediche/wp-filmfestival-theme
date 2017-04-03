@@ -44,6 +44,7 @@ Version: 0.1
 @import url(./styles/partials/newsletter-signup.css);
 @import url(./styles/partials/ticket-card.css);
 @import url(./styles/partials/buster-section.css);
+@import url(./styles/partials/person-card.css);
 
 /* Sider */
 @import url(./styles/pages/frontpage.css);
