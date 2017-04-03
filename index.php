@@ -19,7 +19,6 @@
                                     <div class="post-image-date">Skrevet d. <?php the_date(); ?></div>
                                 </div>
                             </div>
-                            
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">

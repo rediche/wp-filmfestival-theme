@@ -2,9 +2,9 @@
 
 .post-image {
     background-image: url(../../images/news/news_01.png);
-    background-position: center;
+    background-position: top center;
     background-size: cover;
-    min-height: 200px;
+    min-height: 300px;
     margin: 0 -8px;
     padding: 0 8px;
     text-shadow: var(--text-shadow);
@@ -12,7 +12,7 @@
 }
 
 .post-image > .row {
-    min-height: calc(200px - 8px);
+    min-height: calc(300px - 8px);
 }
 
 .post-lead {
