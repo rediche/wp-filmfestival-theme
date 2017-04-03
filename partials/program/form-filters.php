@@ -8,7 +8,7 @@
                 <span class="program-search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
                 <input type="text" name="query" class="program-search-field" placeholder="Søg og tryk enter!" value="<?php if (isset($_GET['query'])) { echo $_GET['query']; } ?>">
                 <span class="program-search-filter">
-                    Filter <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    Filtre <i class="fa fa-caret-down" aria-hidden="true"></i>
                 </span>
             </div>
         </div>
@@ -139,7 +139,7 @@
                     <span class="button tiny inline program-filter-update" data-filter-submit>Opdater søgning
                         <paper-ripple></paper-ripple>
                     </span>
-                    <a class="button tiny inline transparent program-filter-reset" href="<?php the_permalink(); ?>" data-filter-reset>Nulstil filtre
+                    <a class="button tiny inline transparent program-filter-reset" href="<?php the_permalink(); ?>" data-filter-reset>Nulstil søgning
                         <paper-ripple></paper-ripple>
                     </a>
                 </div>
