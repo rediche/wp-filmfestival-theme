@@ -68,13 +68,18 @@
             }
         ?>
         <?php
-            if (isset($version) && !empty($version)) {
-                echo 'data-language="' . strtolower($version) . '"';
+            if (isset($language) && !empty($language)) {
+                echo 'data-language="' . strtolower($language) . '"';
             }
         ?>
         <?php
             if (isset($genre) && !empty($genre)) {
                 echo 'data-genre="' . strtolower($genre) . '"';
+            }
+        ?>
+        <?php
+            if (isset($venue) && !empty($venue)) {
+                echo 'data-venue="' . strtolower($venue) . '"';
             }
         ?>
         <?php // TODO: how to venue? ?>
