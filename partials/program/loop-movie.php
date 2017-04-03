@@ -22,7 +22,36 @@
         $genre .= strtolower($tempGenre->name);
     endforeach;
 
-    $movieMeta = $original_title.' '.$title.' '.$country.' '.$year.' '.$duration.' '.$producer.' '.$manuscript.' '.$actors.' '.$camera.' '.$editing.' '.$sound.' '.$music.' '.$production.' '.$version.' '.$subtitlelang.' '.get_the_title() .' '.$genre;
+    $venue = '';
+    foreach(wp_get_post_terms( get_the_ID(), 'venue') as $tempVenue) :
+        $venue .= strtolower($tempVenue->name);
+    endforeach;
+
+    $language = '';
+    foreach(wp_get_post_terms( get_the_ID(), 'language') as $tempLang) :
+        $language .= strtolower($tempLang->name);
+    endforeach;
+
+    $movieMeta = '';
+    $movieMeta .= $original_title.' ';
+    $movieMeta .= $title.' ';
+    $movieMeta .= $country.' ';
+    $movieMeta .= $year.' ';
+    $movieMeta .= $duration.' ';
+    $movieMeta .= $producer.' ';
+    $movieMeta .= $manuscript.' ';
+    $movieMeta .= $actors.' ';
+    $movieMeta .= $camera.' ';
+    $movieMeta .= $editing.' ';
+    $movieMeta .= $sound.' ';
+    $movieMeta .= $music.' ';
+    $movieMeta .= $production.' ';
+    $movieMeta .= $version.' ';
+    $movieMeta .= $subtitlelang.' ';
+    $movieMeta .= get_the_title().' ';
+    $movieMeta .= $genre.' ';
+    $movieMeta .= $venue.' ';
+    $movieMeta .= $language.' ';
 ?>
 
 <div class="col-xs-12 col-sm-6 col-md-4 program-list-item"

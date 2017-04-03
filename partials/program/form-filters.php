@@ -69,32 +69,36 @@
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-venue" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg venue<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
-                        <label for="venue-imperial" class="program-filter-group">
-                            <input type="checkbox" name="venue[]" value="imperial" id="venue-imperial">
-                            <span>Imperial</span>
-                        </label>
-                        <label for="venue-dagmar" class="program-filter-group">
-                            <input type="checkbox" name="venue[]" value="dagmar" id="venue-dagmar">
-                            <span>Dagmar</span>
-                        </label>
+                        <?php 
+                            $venues = get_terms( array(
+                                'taxonomy' => 'venue',
+                                'hide_empty' => true
+                            ) );
+                        ?>
+                        <?php foreach($venues as $venue) : ?>
+                            <label for="venue-<?php echo $venue->slug; ?>" class="program-filter-group">
+                                <input type="checkbox" name="venue[]" value="<?php echo strtolower($venue->name); ?>" id="venue-<?php echo $venue->slug; ?>">
+                                <span><?php echo $venue->name; ?></span>
+                            </label>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-language" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg sprog<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
-                        <label for="lang-danish" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="dansk" id="lang-danish">
-                            <span>Dansk</span>
-                        </label>
-                        <label for="lang-english" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="engelsk" id="lang-english">
-                            <span>Engelsk</span>
-                        </label>
-                        <label for="lang-german" class="program-filter-group">
-                            <input type="checkbox" name="lang[]" value="tysk" id="lang-german">
-                            <span>Tysk</span>
-                        </label>
+                        <?php 
+                            $languages = get_terms( array(
+                                'taxonomy' => 'language',
+                                'hide_empty' => true
+                            ) );
+                        ?>
+                        <?php foreach($languages as $lang) : ?>
+                            <label for="lang-<?php echo $lang->slug; ?>" class="program-filter-group">
+                                <input type="checkbox" name="lang[]" value="<?php echo strtolower($lang->name); ?>" id="lang-<?php echo $lang->slug; ?>">
+                                <span><?php echo $lang->name; ?></span>
+                            </label>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
