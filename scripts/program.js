@@ -46,7 +46,8 @@ function initializeFilterToggles() {
     var filters = [
         "subtitles",
         "language",
-        "genre"
+        "genre",
+        "venue"
     ];
 
     handleMultipleFilters(filters);
