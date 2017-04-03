@@ -6,6 +6,13 @@
     background-size: cover;
     min-height: 200px;
     margin: 0 -8px;
+    padding: 0 8px;
+    text-shadow: var(--text-shadow);
+    color: var(--color-white);
+}
+
+.post-image > .row {
+    min-height: calc(200px - 8px);
 }
 
 .post-lead {
@@ -20,5 +27,6 @@
 @media screen and (min-width: 48rem) {
     .post-image {
         margin: 0 -16px;
+        padding: 0 16px;
     }
 }
