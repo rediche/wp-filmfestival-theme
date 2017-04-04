@@ -24,7 +24,25 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+// Generer tilfældigt baggrundsbillede, 
+// hvis vi ikke er på en filmside.
+// Hvis vi er på en filmside
+// så vis thumbnail som baggrund
+$background_image = '';
+if (has_post_thumbnail()) :
+  $background_image = get_the_post_thumbnail_url();
+endif;
+
+if (empty($background_image)) {
+  $background_image = "Was empty";
+}
+
+//echo $background_image;
+?>
+
+<body <?php body_class(); ?> 
+      <?php if (isset($background_image)) : echo 'style="background-image: url('.$background_image.');"'; endif; ?>>
 
   <?php
   if (!is_front_page()) {
