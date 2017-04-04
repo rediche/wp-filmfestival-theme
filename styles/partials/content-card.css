@@ -48,6 +48,14 @@
     transition: .3s opacity;
 }
 
+/* Page template */
+.content-card.page-template .content-card-title {
+    margin-bottom: 8px;
+}
+.content-card.page-template .post-content {
+    padding-top: 0;
+}
+
 @media screen and (min-width: 48em) {
     .content-card {
         padding: var(--padding);
