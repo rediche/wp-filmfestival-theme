@@ -49,7 +49,9 @@
                     </div>
                     <div class="row center-xs">
                         <div class="col-xs col-sm-6">
-                            <a href="<?php echo get_term_link($collection->term_id) ?>" class="button content-card-button">Se hele serien</a>
+                            <a href="<?php echo get_term_link($collection->term_id) ?>" class="button content-card-button">Se hele serien
+                                <paper-ripple></paper-ripple>
+                            </a>
                         </div>
                     </div>
                     
