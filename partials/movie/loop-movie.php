@@ -53,25 +53,39 @@
         </div>
     </div>
 
-    <h2 class="movie-sidebar-title">Spilletider</h2>
-    <div class="movie-schedule">
-        <?php for($i = 0; $i < 4; $i++) { ?>
-        <a class="movie-schedule-entry" 
-            data-schedule-add 
-            data-schedule-venue="Grand Teatret" 
-            data-schedule-date="Fre. 17/03" 
-            data-schedule-time="19.15"
-            data-schedule-movie="24 Weeks"
-            data-schedule-image="18405a">
-            <p class="movie-schedule-venue">Grand Teatret</p>
-            <div class="movie-schedule-meta">
-                <span class="movie-schedule-time">Fre. 17/03 - kl. 19.15</span>
-                <span class="movie-schedule-buy">Tilføj til MyPIX Program</span>
-            </div>
-            <paper-ripple></paper-ripple>
-        </a>
-        <?php } ?>
-    </div>
+    <?php 
+        $schedule = get_the_terms( get_the_ID(), 'venue' );
+        //var_dump($schedule);
+
+        if ($schedule) :
+    ?>
+        <h2 class="movie-sidebar-title">Spilletider</h2>
+        <div class="movie-schedule">
+            <?php foreach($schedule as $playtime) : ?>
+            <?php 
+                $randomDate = mt_rand(1506556800, 1507766399);
+                $showDate = date("d/m/y", $randomDate);
+                $showTime = date("H.i",$randomDate);
+            ?>
+            <a class="movie-schedule-entry" 
+                data-schedule-add 
+                data-schedule-venue="<?php echo $playtime->name; ?>" 
+                data-schedule-date="<?php echo $showDate; ?>" 
+                data-schedule-time="<?php echo $showTime; ?>"
+                data-schedule-movie="<?php the_title(); ?>"
+                data-schedule-image="<?php the_post_thumbnail_url( 'large' ); ?>">
+                <p class="movie-schedule-venue"><?php echo $playtime->name; ?></p>
+                <div class="movie-schedule-meta">
+                    <span class="movie-schedule-time"><?php echo $showDate; ?> - kl. <?php echo $showTime; ?></span>
+                    <span class="movie-schedule-buy">Tilføj til MyPIX Program</span>
+                </div>
+                <paper-ripple></paper-ripple>
+            </a>
+            <?php endforeach; ?>
+        </div>
+    <?php
+        endif;
+    ?>
 
     <?php
     /**
