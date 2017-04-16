@@ -154,6 +154,13 @@
         </a>
     </template>
 
+    <!-- Social Share Kit -->
+    <div class="ssk-group">
+        <a href="" class="ssk ssk-facebook"></a>
+        <a href="" class="ssk ssk-twitter"></a>
+        <a href="" class="ssk ssk-email"></a>
+    </div>
+
     <?php wp_footer(); ?>
 </body>
 </html>
