@@ -10,11 +10,15 @@
 .movie-mood-bar {
     height: .5rem;
     margin-bottom: 1rem;
+
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
 }
 .movie-mood-progress {
     width: 75%;
     height: 100%;
+
+    background-color: #333333;
     background-color: var(--color-grey);
 }
 

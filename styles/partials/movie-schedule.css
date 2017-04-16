@@ -1,5 +1,7 @@
 .movie-schedule {
     padding: 1rem 0;
+
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
 }
 

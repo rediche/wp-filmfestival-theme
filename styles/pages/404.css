@@ -18,6 +18,10 @@
     margin-right: auto;
     margin-top: 2rem;
     margin-bottom: 1rem;
+
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
+    
+    color: #333333;
     color: var(--color-grey);
 }

@@ -88,7 +88,11 @@
 
 [data-dropdown="open"] .program-filter-subheading {
     font-style: italic;
+
+    background-color: #ffffff;
     background-color: var(--color-white);
+
+    box-shadow: 1px 2px 3px rgba(0,0,0,.16);
     box-shadow: var(--program-box-shadow);
 }
 
@@ -118,8 +122,13 @@
 /* Program filter dropdown */
 .program-filter-dropdown {
     display: none;
+
+    background-color: #ffffff;
     background-color: var(--color-white);
+
+    box-shadow: 1px 2px 3px rgba(0,0,0,.16);
     box-shadow: var(--program-box-shadow);
+
     padding: 1rem 0;
     cursor: initial;
     position: absolute;
@@ -153,6 +162,7 @@
 }
 
 .program-filter-group:hover {
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
 }
 

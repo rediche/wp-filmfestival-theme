@@ -1,9 +1,11 @@
 .mypix .content-card {
+    padding: .5rem;
     padding: var(--padding-xs);
 }
 
 @media screen and (min-width: 48rem) {
     .mypix .content-card {
+        padding: 1rem;
         padding: var(--padding);
     }
 }

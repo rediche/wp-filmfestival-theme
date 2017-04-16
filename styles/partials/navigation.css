@@ -13,12 +13,16 @@
 
 
 .main-navigation-container {
+    background-color: #000000;
     background-color: var(--color-black);
+
     padding: 0 1em;
 }
 
 .main-navigation-container a {
+    color: #ffffff;
     color: var(--color-white);
+
     padding: 1em 0;
     text-decoration: none;
     text-transform: uppercase;
@@ -34,7 +38,9 @@
 }
 
 .main-navigation-container .burger {
+    color: #ffffff;
     color: var(--color-white);
+
     cursor: pointer;
 }
 
@@ -113,7 +119,10 @@
         padding: 16px 0;
         min-width: 250px;
         box-shadow: 0 1px 6px rgba(0,0,0,.16);
+
+        background-color: #ffffff;
         background-color: var(--color-white);
+
         margin-left: -16px;
         z-index: 99;
         transition: .3s opacity;
@@ -136,7 +145,9 @@
     }
 
     .main-navigation-container .sub-menu li a {
+        color: #000000;
         color: var(--color-black);
+        
         text-transform: none;
         display: block;
         padding: 16px;

@@ -23,7 +23,11 @@
 .buster-section-button {
     margin-top: 0rem;
     margin-bottom: 1rem;
+
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
+
+    color: #333333;
     color: var(--color-grey);
 }
 

@@ -1,11 +1,19 @@
 .content-card {
+    background-color: #ffffff;
     background-color: var(--color-white);
+
+    box-shadow: 0 10px 20px rgba(0,0,0,.19);
     box-shadow: var(--content-card-shadow);
+
+    padding: 0 1rem;
     padding: 0 var(--padding-xs);
 }
 
 .content-card.inverted {
+    background-color: #000000;
     background-color: var(--color-black);
+
+    color: #ffffff;
     color: var(--color-white);
 }
 
@@ -27,7 +35,11 @@
 .content-card-button {
     margin-top: 1rem;
     margin-bottom: 1rem;
+
+    background-color: #eeeeee;
     background-color: var(--color-light-grey);
+
+    color: #333333;
     color: var(--color-grey);
 }
 
@@ -58,7 +70,10 @@
 
 @media screen and (min-width: 48em) {
     .content-card {
+        padding: 1rem;
         padding: var(--padding);
+
+        margin-bottom: 2rem;
         margin-bottom: var(--margin);
     }
 

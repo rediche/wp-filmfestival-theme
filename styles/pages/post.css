@@ -7,7 +7,11 @@
     min-height: 300px;
     margin: 0 -8px;
     padding: 0 8px;
+
+    text-shadow: 1px 1px 2px rgba(0,0,0,.16);
     text-shadow: var(--text-shadow);
+
+    color: #ffffff;
     color: var(--color-white);
 }
 

@@ -35,5 +35,6 @@
 }
 
 .person-card-content a {
+    color: #000000;
     color: var(--color-black);
 }

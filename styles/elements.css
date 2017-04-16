@@ -11,6 +11,7 @@
 /* 1. Buttons */
 
 .button {
+    background-color: #BF3131;
     background-color: var(--color-red);
     color: white;
     font-size: 16px;
@@ -36,11 +37,13 @@
 }
 
 .button.black {
+    background-color: #000000;
     background-color: var(--color-black);
 }
 
 .button.transparent {
     background-color: transparent;
+    color: #333333;
     color: var(--color-grey);
 }
 
@@ -54,6 +57,7 @@ img {
 /* 3. Paper-toast */
 
 paper-toast.error {
+    background-color: #BF3131;
     background-color: var(--color-red);
 }
 
