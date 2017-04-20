@@ -163,5 +163,8 @@
     </div>
 
     <?php wp_footer(); ?>
+    <script>
+        SocialShareKit.init();
+    </script>
 </body>
 </html>

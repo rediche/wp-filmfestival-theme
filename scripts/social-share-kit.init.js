@@ -1,1 +1,0 @@
-SocialShareKit.init();

@@ -17,7 +17,6 @@ function add_theme_scripts() {
     wp_enqueue_script( 'social-share-kit', get_template_directory_uri() . '/bower_components/social-share-kit/dist/js/social-share-kit.min.js');
 
     /* Themes own JS */
-    wp_enqueue_script( 'social-share-kit-init', get_template_directory_uri() . '/scripts/social-share-kit.init.js' );
     wp_enqueue_script( 'program', get_template_directory_uri() . '/scripts/program.js' );
     wp_enqueue_script( 'navigation', get_template_directory_uri() . '/scripts/navigation.js' );
     wp_enqueue_script( 'newsletter', get_template_directory_uri() . '/scripts/newsletter.js' );
