@@ -30,12 +30,6 @@ $background_image = '';
 if (has_post_thumbnail()) :
   $background_image = get_the_post_thumbnail_url();
 endif;
-
-if (empty($background_image)) {
-  $background_image = "Was empty";
-}
-
-//echo $background_image;
 ?>
 
 <body <?php body_class(); ?> 
