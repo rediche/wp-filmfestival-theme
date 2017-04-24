@@ -10,12 +10,16 @@ document.addEventListener('DOMContentLoaded', event => {
             /* Slå link fra */
             event.preventDefault();
 
+            // Hent film fra localstorage
             var getCurrentMovies = JSON.parse(localStorage.getItem('movies'));
 
+            // Hvis der ikke er nogen film
+            // Så lav en tom liste
             if (getCurrentMovies === null) {
                 getCurrentMovies = [];
             }
 
+            // Opret objekt der har data'en for filmen vi tilføjer
             var newMovie = {
                 "id": element.getAttribute('data-movie-id'),
                 "title": element.getAttribute('data-movie-title'),
@@ -25,12 +29,13 @@ document.addEventListener('DOMContentLoaded', event => {
                 "director": element.getAttribute('data-movie-director')
             };
 
+            // Indsæt filmens objekt på listen
             getCurrentMovies.push(newMovie);
 
+            // Gem den nye filmliste i localstorage
             localStorage.setItem('movies', JSON.stringify(getCurrentMovies));
 
-            /* Toggle class'en "open" */
-            console.log("Clicked myPix Button");
+            /* Åben toast'en der siger filmen er tilføjet */
             mypixToast.open();
         });
     }); 
@@ -62,6 +67,7 @@ document.addEventListener('DOMContentLoaded', event => {
         }
     });
 
+    // Find myPIX listen
     var myPIXMovieList = document.querySelector('[data-mypix-list]');
 
     /* Kør kun denne kode, hvis elementet med attributten data-mypix-list er på siden */
@@ -74,12 +80,18 @@ document.addEventListener('DOMContentLoaded', event => {
             localStorage.setItem('movies', JSON.stringify(movies));
         }
 
+        // Hent film fra localstorage
         var retrievedMovies = JSON.parse(localStorage.getItem('movies'));
+
+        // Hent templaten
         var movieCardTemplate = document.getElementById('movieTemplate');
 
+        // For hver film vi har hentet fra localstorage
         retrievedMovies.forEach(function(movie) {
+            // Kopier templaten
             var template = movieCardTemplate.content.cloneNode(true);
 
+            // Udfyld template data
             template.querySelector('[data-movie-id]').setAttribute('data-movie-id', movie.id);
             template.querySelector('[data-movie-remove]').setAttribute('data-movie-remove', movie.id);
             template.querySelector('[data-movie-title]').innerHTML = movie.title;
@@ -88,6 +100,7 @@ document.addEventListener('DOMContentLoaded', event => {
             template.querySelector('[data-movie-content]').innerHTML = movie.content;
             template.querySelector('[data-movie-director]').innerHTML = movie.director;
 
+            // Tilføj film til listen
             myPIXMovieList.appendChild(template);
         });
 
@@ -110,7 +123,7 @@ document.addEventListener('DOMContentLoaded', event => {
                 // Opdater filmlisten i LocalStorage
                 localStorage.setItem('movies', JSON.stringify(retrievedMovies));
 
-                // Vis toast besked
+                // Vis toast besked om at filmen er slettet
                 mypixDeletedToast.open();
 
                 // Skjul element for nu. Ved opdatering af siden vil filmen ikke dukke op.
@@ -119,6 +132,7 @@ document.addEventListener('DOMContentLoaded', event => {
         });
     }
 
+    // Find billet listen
     var myTicketList = document.querySelector('[data-ticket-list]');
 
     if (myTicketList) {
@@ -126,38 +140,28 @@ document.addEventListener('DOMContentLoaded', event => {
         if (localStorage.getItem('tickets') != null) {
             console.log("Already has some tickets");
         } else {
-            /*var tickets = [{
-                "id": 0,
-                "title": "24 Weeks",
-                "venue": "Grand Teatret",
-                "image": "18405a",
-                "date": "Lør. 18/03/17",
-                "time": "19.15"
-            },{
-                "id": 1,
-                "title": "Det hvide folk",
-                "venue": "Palads",
-                "image": "17634a",
-                "date": "Fre. 17/03/17",
-                "time": "18.20"
-            }];*/
-
             var tickets = [];
-
             localStorage.setItem('tickets', JSON.stringify(tickets));
         }
 
+        // Hent billetter fra localstorage
         retrievedTickets = JSON.parse(localStorage.getItem('tickets'));
+
+        // Hent billet template
         ticketTemplate = document.getElementById('ticketListTemplate');
 
+        // For hver billet
         retrievedTickets.forEach(ticket => {
+            // Kopier templaten
             var template = ticketTemplate.content.cloneNode(true);
 
+            // Udfyld template data
             template.querySelector('[data-ticket-venue]').innerHTML = ticket.venue;
             template.querySelector('[data-ticket-title]').innerHTML = ticket.title;
             template.querySelector('[data-ticket-date]').innerHTML = ticket.date;
             template.querySelector('[data-ticket-time]').innerHTML = ticket.time;
 
+            // Tilføj billetten til billet listen
             myTicketList.appendChild(template);
         });
     }
@@ -168,6 +172,7 @@ document.addEventListener('DOMContentLoaded', event => {
     addToTickets.forEach(ticket => {
         ticket.addEventListener('click', event => {
 
+            // Lav objekt med data for billetten
             var newTicket = {
                 "id": 1,
                 "title": ticket.getAttribute('data-schedule-movie'),
@@ -177,14 +182,19 @@ document.addEventListener('DOMContentLoaded', event => {
                 "time": ticket.getAttribute('data-schedule-time')
             };
 
+            // Hent billet listen fra localstorage
             var getTickets = JSON.parse(localStorage.getItem('tickets'));
 
+            // Hvis der ikke er nogen billetter
+            // Lav en tom liste
             if (getTickets === null) {
                 getTickets = [];
             }
 
+            // Indsæt billet objektet på listen
             getTickets.push(newTicket);
 
+            // Gem listen i localstorage
             localStorage.setItem('tickets', JSON.stringify(getTickets));
 
             /* Show toast if toast is on the site */
