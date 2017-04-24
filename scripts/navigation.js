@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', event => {
 
     /* Loop igennem alle submenus */
     subMenuElements.forEach(function(element) {
+        // Lav media query
         var mediaQuery = window.matchMedia('(max-width: 768px)');
 
+        // Hvis media query matcher
         if (mediaQuery.matches) {
             /* Find linket lige før submenuen i DOM'en */
             element.previousElementSibling.addEventListener('click', function(event) {

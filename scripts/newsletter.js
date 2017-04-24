@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', event => {
     newsletterSignupForm.forEach(function(element) {
         var signupButton = element.querySelector('.signup-to-newsletter');
         var signupInput = element.querySelector('.newsletter-signup-text');
+        
         signupButton.addEventListener('click', function(event) {
             /* Slå link fra */
             event.preventDefault();

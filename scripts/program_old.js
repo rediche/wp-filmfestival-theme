@@ -1,3 +1,6 @@
+/*
+VI BRUGER IKKE DENNE FIL
+*/
 document.addEventListener('DOMContentLoaded', event => {
     /* Toggle filtre */
     var filterElement  = document.querySelector('.program-search-filter');

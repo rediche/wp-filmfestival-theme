@@ -1,3 +1,4 @@
+/* I behøver nok ikke at kunne denne fil */
 document.addEventListener('DOMContentLoaded', event => {
     initalizeFilters();
     initializeFilterToggles();

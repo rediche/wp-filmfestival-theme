@@ -1,3 +1,8 @@
+
+/* 
+    Lav et YouTube Video element 
+    Dette er kode fra Google
+*/
 var ytAPITag = document.createElement('script');
 ytAPITag.id = 'yt-iframe-api';
 ytAPITag.src = 'https://www.youtube.com/iframe_api';
