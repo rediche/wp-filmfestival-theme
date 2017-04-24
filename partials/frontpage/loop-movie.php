@@ -8,6 +8,11 @@
                     <p>Instr.: <?php echo get_post_meta( get_the_ID(), '_movie_director', true ); ?></p>
                 </div>
                 <div class="movie-card-content">
+                    <?php
+                        /*
+                        Vis kun de 200 første anslag af indholdet og tilføj "..." efter.
+                        */
+                    ?>
                     <p><?php echo substr(get_the_content(), 0, 200) . '...'; ?></p>
                 </div>
                 <div class="movie-card-overlay"></div>
@@ -18,6 +23,12 @@
             <a href="#0" class="button">Køb Billet
                 <paper-ripple></paper-ripple>
             </a>
+            <?php
+                /* 
+                Alle disse data-movie-* er data, som JavaScript bruger
+                Til at kunne tilføje den rigtige film til ens liste.
+                */
+            ?>
             <a href="#0" class="button black add-to-mypix"
                 data-movie-id="<?php the_ID(); ?>"
                 data-movie-title="<?php the_title(); ?>"

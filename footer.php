@@ -85,7 +85,11 @@
     <paper-toast id="newsletterToast" text="Tak for signup!"></paper-toast>
     <paper-toast id="newsletterToastError" class="error" text="FEJL! Du skal indtaste en email adresse."></paper-toast>
 
-    <!-- MyPIX Ticket -->
+    <!-- 
+        MyPIX Ticket
+        Bliver ikke brugt lige nu.
+        Bør blive brugt til når man klikker på en billet
+    -->
     <div id="mypixTicket" class="ticket-card">
         <div class="ticket-card-image">
             <h2 class="ticket-card-title">24 Weeks</h2>
@@ -106,9 +110,16 @@
         </div>
     </div>
 
+    <!-- 
+        Semitransperant sort div der fylder hele skærmen
+        Bliver brugt når man åbner trailer
+    -->
     <div id="overlay"></div>
 
-    <!-- MyPIX Movie Card Tempalte -->
+    <!-- 
+        MyPIX Movie Card Tempalte
+        Brugt til at generere moviecards på MyPIX 
+    -->
     <template id="movieTemplate">
         <div class="col-xs-12 col-sm-6 col-md-4" data-movie-id>
             <div class="movie-card-container">
@@ -142,7 +153,10 @@
         </div>
     </template>
 
-    <!-- Ticket template -->
+    <!-- 
+        Ticket template 
+        Template til at generere billetter på MyPIX
+    -->
     <template id="ticketListTemplate">
         <a class="movie-schedule-entry" data-ticket-open>
             <p class="movie-schedule-venue" data-ticket-venue>Grand Teatret</p>
@@ -154,7 +168,7 @@
         </a>
     </template>
 
-    <!-- Social Share Kit -->
+    <!-- Social Share Kit - SoMe deleknapper -->
     <div class="ssk-sticky ssk-left ssk-center ssk-lg">
         <a href="" class="ssk ssk-facebook"></a>
         <a href="" class="ssk ssk-twitter"></a>
@@ -162,7 +176,13 @@
         <a href="" class="ssk ssk-email"></a>
     </div>
 
-    <?php wp_footer(); ?>
+    <?php 
+        // Hent WP-footer tags
+        // SKAL være i temaet
+        wp_footer(); 
+    ?>
+
+    <!-- Start SoMe deleknapper -->
     <script>
         SocialShareKit.init();
     </script>

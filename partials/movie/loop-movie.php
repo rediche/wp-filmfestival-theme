@@ -1,4 +1,6 @@
 <?php
+    // Hent alle vores specielle felter fra WP-Admin
+    // Når man redigerer en film.
     $original_title = get_post_meta( get_the_ID(), '_movie_original_title', true );
     $title          = get_post_meta( get_the_ID(), '_movie_title', true );
     $country        = get_post_meta( get_the_ID(), '_movie_country', true );
@@ -30,6 +32,7 @@
                     }
                 ?>
             </div>
+            <?php // Hvis der er en trailer, så vis play knappen ?>
             <?php if (isset($trailer) && !empty($trailer)) { ?>
                 <div class="movie-card-playbutton">
                     <i class="fa fa-play" aria-hidden="true"></i>
@@ -63,10 +66,14 @@
         <div class="movie-schedule">
             <?php foreach($schedule as $playtime) : ?>
             <?php 
+                // Lav et tilfældigt tidspunkt.
+                // Vi gør kun dette fordi vi ikke kan sætte spilletider
+                // i WP-admin
                 $randomDate = mt_rand(1506556800, 1507766399);
                 $showDate = date("d/m/y", $randomDate);
                 $showTime = date("H.i",$randomDate);
             ?>
+            <?php // data-schedule-* bliver brugt af JavaScript ?>
             <a class="movie-schedule-entry" 
                 data-schedule-add 
                 data-schedule-venue="<?php echo $playtime->name; ?>" 
@@ -89,7 +96,7 @@
 
     <?php
     /**
-     * Get Mood Metadata
+     * Hent meta dataen fra Stemningsboksen i WP-admin
      */ 
 
     $tempo          = get_post_meta( get_the_ID(), '_mood_tempo', true );
@@ -171,10 +178,15 @@
         ?>
     </header>
 
+    <?php // Vis indholdet ?>
     <?php the_content(); ?>
     
     <footer class="movie-description-footer">
         <p>
+            <?php 
+                // Vis de forskellige film metadata,
+                // hvis de er blevet udfyldt i WP-admin
+            ?>
             <?php if (isset($original_title) && !empty($original_title)) {
                 echo '<strong>Originaltitel</strong> '. $original_title;
             } ?>

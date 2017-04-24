@@ -1,5 +1,6 @@
 <?php
 
+// Tilføj support for fremhævede billeder
 add_theme_support( 'post-thumbnails' ); 
 
 function add_theme_styles() {
@@ -32,6 +33,7 @@ function register_main_menu() {
 add_action( 'after_setup_theme', 'register_main_menu' );
 
 /* THIS SHOULD BE IN A PLUGIN!!! */
+// Lav følgende shortcode tag:
 // [person name="" image="" title="" mail="" tel=""]
 function cphpix_init_person_shortcode( $atts ) {
     $attributes = shortcode_atts( array(

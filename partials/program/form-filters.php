@@ -1,3 +1,4 @@
+<?php // data-filter-form igangsætter vores JavaScript ?>
 <form method="get" data-filter-form>
     <div class="row program-header">
         <div class="col-xs-12 col-sm-3">
@@ -6,6 +7,8 @@
         <div class="col-xs-12 col-sm-9">
             <div class="program-search">
                 <span class="program-search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+
+                <?php // Hvis ?query= er sat i URL'en, så indsæt den i søgefeltet ?>
                 <input type="text" name="query" class="program-search-field" placeholder="Søg og tryk enter!" value="<?php if (isset($_GET['query'])) { echo $_GET['query']; } ?>">
                 <span class="program-search-filter">
                     Filtre <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -18,44 +21,21 @@
     <div class="row program-filter">
         <div class="col-xs-12">
             <div class="row">
-                <!--<div class="col-xs-12 col-sm-6 col-md-4 program-filter-days" data-dropdown>
-                    <h4 class="program-filter-subheading">Vælg dage<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
-                    <div class="program-filter-dropdown double-width">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm">
-                                <h5 class="program-filter-dropdown-heading">Uge 1</h5>
-                                <label for="days-1-10" class="program-filter-group">
-                                    <input type="checkbox" name="days[]" value="1-10" id="days-1-10">
-                                    <span>1/10</span>
-                                </label>
-                                <label for="days-2-10" class="program-filter-group">
-                                    <input type="checkbox" name="days[]" value="2-10" id="days-2-10">
-                                    <span>2/10</span>
-                                </label>
-                            </div>
-                            <div class="col-xs-12 col-sm">
-                                <h5 class="program-filter-dropdown-heading">Uge 2</h5>
-                                <label for="days-3-10" class="program-filter-group">
-                                    <input type="checkbox" name="days[]" value="3-10" id="days-3-10">
-                                    <span>3/10</span>
-                                </label>
-                                <label for="days-4-10" class="program-filter-group">
-                                    <input type="checkbox" name="days[]" value="4-10" id="days-4-10">
-                                    <span>4/10</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
 
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-genre" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg genre<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
                         <?php 
+                            // Hent alle genrer fra WP-admin,
+                            // der har film tilknyttet
                             $genres = get_terms( array(
                                 'taxonomy' => 'genre',
                                 'hide_empty' => true
                             ) );
+                        ?>
+                        <?php 
+                            // For hvert enkel genre, 
+                            //lav en checkbox med de rigtige informationer 
                         ?>
                         <?php foreach($genres as $genre) : ?>
                             <label for="genre-<?php echo $genre->slug; ?>" class="program-filter-group">
@@ -66,6 +46,7 @@
                     </div>
                 </div>
 
+                <?php // Kig på genre for at se hvordan denne kode fungerer ?>
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-venue" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg venue<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
@@ -84,6 +65,7 @@
                     </div>
                 </div>
 
+                <?php // Kig på genre for at se hvordan denne kode fungerer ?>
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-language" data-dropdown>
                     <h4 class="program-filter-subheading">Vælg sprog<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
                     <div class="program-filter-dropdown">
@@ -102,20 +84,7 @@
                     </div>
                 </div>
 
-                <!--<div class="col-xs-12 col-sm-6 col-md-4 program-filter-mood" data-dropdown>
-                    <h4 class="program-filter-subheading light">Vælg stemning<i class="fa fa-caret-down" aria-hidden="true"></i></h4>
-                    <div class="program-filter-dropdown">
-                        <label for="mood-tempo" class="program-filter-group">
-                            <input type="range" value="0" min="0" max="100" step="10" name="mood-tempo" id="mood-tempo">
-                            <span>Tempo</span>
-                        </label>
-                        <label for="mood-trills" class="program-filter-group">
-                            <input type="range" value="0" min="0" max="100" step="10" name="mood-thrills" id="mood-thrills">
-                            <span>Thrills</span>
-                        </label>
-                    </div>
-                </div>-->
-
+                <?php // Slå undertekster til og fra ?>
                 <div class="col-xs-12 col-sm-6 col-md-4 program-filter-subtitles">
                     <label for="subtitles" class="program-filter-group">
                         <input type="checkbox" 
@@ -129,6 +98,11 @@
             <div class="row center-xs end-sm program-filter-buttons">
                 <div class="col-xs-12 col-sm-6">
                     <p class="program-filter-whichprogram">
+                        <?php
+                            // Hvis der står ?festival=buster i URL'en
+                            // skriv at man kan skifte til CPH PIX program
+                            // og den anden vej, hvis der ikke står ?festival=buster i URL'en
+                        ?>
                         <?php if (isset($_GET['festival']) && $_GET['festival'] == 'buster') { ?>
                             <span>Du ser lige nu <strong>BUSTERs</strong> program. <a href="<?php the_permalink(); ?>">Skift til <strong>CPH PIX</strong></a>.</span></p>
                         <?php } else { ?>

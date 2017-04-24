@@ -1,4 +1,5 @@
 <?php
+    // Hent film metadata fra WP-admin
     $original_title = get_post_meta( get_the_ID(), '_movie_original_title', true );
     $title          = get_post_meta( get_the_ID(), '_movie_title', true );
     $country        = get_post_meta( get_the_ID(), '_movie_country', true );
@@ -17,21 +18,29 @@
     $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
     $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
 
+    // Hent alle genre navne for filmen
+    // Og adskil dem med mellemrum
     $genre = '';
     foreach(wp_get_post_terms( get_the_ID(), 'genre') as $tempGenre) :
         $genre .= strtolower($tempGenre->name).' ';
     endforeach;
 
+    // Hent alle venues for filmen
+    // Og adskil dem med mellemrum
     $venue = '';
     foreach(wp_get_post_terms( get_the_ID(), 'venue') as $tempVenue) :
         $venue .= strtolower($tempVenue->name).' ';
     endforeach;
 
+    // Hent alle sprog for filmen
+    // Og adskil dem med mellemrum
     $language = '';
     foreach(wp_get_post_terms( get_the_ID(), 'language') as $tempLang) :
         $language .= strtolower($tempLang->name).' ';
     endforeach;
 
+    // Tilføj alle metadata til en lang sætning,
+    // Adskilt af mellemrum
     $movieMeta = '';
     $movieMeta .= $original_title.' ';
     $movieMeta .= $title.' ';
@@ -57,6 +66,11 @@
 <div class="col-xs-12 col-sm-6 col-md-4 program-list-item"
      data-movie-search-show="true"
      data-movie-filter-show="true"
+     <?php
+        // Hvis $movieMeta er sat
+        // Udskriv sætningen med alle metadata navne
+        // Vi bruger dette i JavaScript til at søge efter film
+     ?>
      data-movie-meta="<?php if (isset($movieMeta) && !empty($movieMeta)) { echo $movieMeta; } ?>"
         <?php 
             if (isset($subtitles) && !empty($subtitles)) {
@@ -84,6 +98,7 @@
         ?>
         <?php // TODO: how to venue? ?>
         <?php // TODO: how to days? ?>>
+        
     <div class="movie-card-container">
         <a href="<?php the_permalink(); ?>">
             <div class="movie-card animated">
