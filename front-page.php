@@ -12,6 +12,7 @@
         </div>
     </div>
 
+    <?php // Load navigationen ?>
     <?php get_sidebar('navigation');  ?>
 
     <div class="container">
@@ -21,15 +22,19 @@
                     <h2 class="content-card-extras-title no-margin">Udvalgte film</h2>
                     <div class="slider-items row">
                         <?php
+                            // Hent max 3 film
                             $args = array( 'post_type' => 'movie', 'posts_per_page' => 3 );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
+                                // For hver film, brug denne template
+                                // det er filen: partials/frontpage/loop-movie.php
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
                     </div>
                 </div>
 
+                <!-- Motion Graphic - KBHFILM Trailer -->
                 <div class="content-card trailer">
                     <div class="movie-card">
                         <div class="trailer-cover">
@@ -42,6 +47,7 @@
                     </div>
                 </div>
 
+                <!-- Nyhedsbrev -->
                 <div class="content-card newsletter-signup-cta">
                     <h3 class="newsletter-signup-cta-heading">Tilmeld dig vores nyhedsbrev</h3>
                     <p class="newsletter-signup-cta-subheading">Og få de seneste nyheder om hvilke film der vises på <strong>KBHFILM</strong>.</p>
@@ -56,13 +62,16 @@
                     <h2 class="content-card-extras-title no-margin">Film fra vores program</h2>
                     <div class="slider-items row">
                         <?php
+                            // Hent 6 tilfældige film 
                             $args = array( 
-                                'post_type' => 'movie', 
-                                'posts_per_page' => 6,
-                                'orderby' => 'rand'
+                                'post_type' => 'movie', // Post typen: Film
+                                'posts_per_page' => 6, // Hvor mange
+                                'orderby' => 'rand' // De skal være tilfældigt valgt
                             );
                             $selectedMoviesLoop = new WP_Query( $args );
                             while ( $selectedMoviesLoop->have_posts() ) : $selectedMoviesLoop->the_post();
+                                // For hver film, brug denne template
+                                // det er filen: partials/frontpage/loop-movie.php
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
@@ -77,6 +86,7 @@
                     </div>
                 </div>
 
+                <!-- CTA til buster hjemmeside -->
                 <div class="content-card buster-section">
                     <div class="row middle-xs">
                         <div class="col-xs-12 col-sm-3 col-md-3 col-md-offset-1 buster-section-image-container">

@@ -16,11 +16,12 @@
 
             <?php 
                 $series = get_terms( array(
-                    'taxonomy' => 'series',
-                    'hide_empty' => true
+                    'taxonomy' => 'series', // Hent serier
+                    'hide_empty' => true // Skjul dem der ikke har film tilknyttet
                 ) );
             ?>
 
+            <?php // For hver serie ?>
             <?php foreach($series as $collection) : ?>
                 <div class="content-card slider-card" id="<?php echo $collection->slug; ?>">
                     <h2 class="content-card-extras-title no-margin"><?php echo $collection->name; ?></h2>
@@ -30,25 +31,27 @@
                     <div class="slide-items row">
                         <?php
                             $args = array( 
-                                'post_type' => 'movie',
-                                'posts_per_page' => 3,
+                                'post_type' => 'movie', // Post type: Film
+                                'posts_per_page' => 3, // Max 3 film
                                 'tax_query' => array( 
                                     array(
-                                        'taxonomy' => 'series',
-                                        'field' => 'slug',
-                                        'terms' => $collection->slug
+                                        'taxonomy' => 'series', // Der er i en serie
+                                        'field' => 'slug',  // Hvor seriens URL matcher
+                                        'terms' => $collection->slug // Seriens navn
                                     )
                                 )
                             );
 
                             $seriesMovieLoop = new WP_Query( $args );
                             while ( $seriesMovieLoop->have_posts() ) : $seriesMovieLoop->the_post();
+                                // Brug templaten i filen: partials/frontpage/loop-movie.php
                                 get_template_part( 'partials/frontpage/loop', 'movie' );
                             endwhile;
                         ?>
                     </div>
                     <div class="row center-xs">
                         <div class="col-xs col-sm-6">
+                            <?php // Link til seriesiden ?>
                             <a href="<?php echo get_term_link($collection->term_id) ?>" class="button content-card-button">Se hele serien
                                 <paper-ripple></paper-ripple>
                             </a>

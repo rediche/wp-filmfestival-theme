@@ -27,6 +27,7 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+// Registrer hovedmenu'en i WP-admin
 function register_main_menu() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'cphpix' ) );
 }

@@ -15,10 +15,11 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-7">
                             <?php 
+                                // Hent menuen tilknyttet menu området: Primary
                                 if (has_nav_menu( 'primary' )) {
                                     wp_nav_menu( array( 
                                         'theme_location' => 'primary',
-                                        'menu_class' => 'menu main-navigation-items'
+                                        'menu_class' => 'menu main-navigation-items' // Tilføj en speciel class: main-navigation-items
                                     ) );
                                 }
                             ?>

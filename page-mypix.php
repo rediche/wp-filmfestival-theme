@@ -10,6 +10,7 @@
                 <div class="content-card">
                     <h1 class="content-card-title"><?php the_title(); ?></h1>
                     <h2 class="content-card-extras-title">Mit program</h2>
+                    <!-- data-ticket-list indlæser billetterne gemt i LocalStorage -->
                     <div class="movie-schedule" data-ticket-list></div>
                 </div>
             </div>
@@ -18,6 +19,7 @@
             <div class="col-xs">
                 <div class="content-card">
                     <h2 class="content-card-extras-title">Min filmliste</h2>
+                    <!-- data-mypix-list indlæser filmene gemt i LocalStorage -->
                     <div class="slider-items row" data-mypix-list></div>
                 </div>
             </div>

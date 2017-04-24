@@ -17,6 +17,7 @@
             <div class="content-card slider-card">
                 <div class="slide-items row">
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                        <?php // Hent templaten i filen: partials/frontpage/loop-movie.php ?>
                         <?php get_template_part( 'partials/frontpage/loop', 'movie' ); ?>
                     <?php endwhile; endif; ?>
                 </div> 
