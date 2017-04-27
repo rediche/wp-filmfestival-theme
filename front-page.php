@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="content-card slider-card">
-                    <h2 class="content-card-extras-title no-margin">Film fra vores program</h2>
+                    <h2 class="content-card-extras-title no-margin">Program</h2>
                     <div class="slider-items row">
                         <?php
                             // Hent 6 tilfældige film 
