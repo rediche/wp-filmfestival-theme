@@ -14,7 +14,7 @@
                     <div class="col-xs-12 col-sm-6">
                         <div class="page-footer-newsletter">
                             <p class="page-footer-newsletter-text">
-                                Tilmeld dig vores nyhedsbrev og få de seneste nyheder om hvilke film der vises på <strong>KBHFILM</strong>.
+                                Tilmeld nyhedsbrev
                             </p>
                             <form class="newsletter-signup">
                                 <input type="email" class="newsletter-signup-text" placeholder="din@email.dk">
