@@ -75,6 +75,8 @@
     </div>
 </div>
 
+<p class="page-footer-disclaimer">This website is made as a school project at Copenhagen School of Design and Technology.</p>
+
 
     <!-- Toast der kommer når man klikker på Tilføj til MyPIX -->
     <paper-toast id="mypixToast" text="Filmen er tilføjet til din MyPIX liste."></paper-toast>
