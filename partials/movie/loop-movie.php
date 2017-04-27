@@ -18,6 +18,7 @@
     $version        = get_post_meta( get_the_ID(), '_movie_version', true );
     $subtitles      = get_post_meta( get_the_ID(), '_movie_subtitles', true );
     $subtitlelang   = get_post_meta( get_the_ID(), '_movie_subtitlelang', true );
+    $trailer   = get_post_meta( get_the_ID(), '_movie_trailer', true );
 ?>
 
 <aside class="col-xs-12 col-sm-5 movie-sidebar">
