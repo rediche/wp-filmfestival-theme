@@ -84,3 +84,8 @@ paper-toast.error {
 address {
     font-style: normal;
 }
+
+/* 6. Paper-toast */
+paper-toast {
+    z-index: 2001;
+}
