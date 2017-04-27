@@ -11,7 +11,7 @@
                 <?php // Hvis ?query= er sat i URL'en, så indsæt den i søgefeltet ?>
                 <input type="text" name="query" class="program-search-field" placeholder="Søg og tryk enter!" value="<?php if (isset($_GET['query'])) { echo $_GET['query']; } ?>">
                 <span class="program-search-filter">
-                    Filtre <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    Filtre <i class="fa fa-caret-up" aria-hidden="true"></i>
                 </span>
             </div>
         </div>
